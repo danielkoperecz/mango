@@ -27,7 +27,12 @@
     <div>hello</div>
     <div>hello</div>
     <div>hello</div>
-    <div>hello</div>
+    <app-button
+      [rounded]="true"
+      [text]="'Light Theme'"
+      [success]="true"
+      (click)="switchToLight()">
+    </app-button>
     <div></div>
     <div>hello</div>
   </app-grid>
@@ -41,7 +46,14 @@
     <div>element</div>
     <div>element</div>
   </app-flex>
-  <button (click)="switchToLight()">Light Theme</button>
-  <button (click)="switchToDark()">Dark Theme</button>
+  <app-button
+    [rounded]="true"
+    [text]="'Light Theme'"
+    [success]="true"
+    (click)="switchToLight()">
+  </app-button>
+  <button appBounceClick (click)="switchToDark()">Dark Theme</button>
 </app-canvas>
-<app-section></app-section>
+<app-section>
+  <div appSkeletonLoader height="120px" width="60%"></div>
+</app-section>

@@ -4,6 +4,7 @@ import { ThemeService } from '../theme/services/theme.service';
 import { StyleBuilder } from '../theme/classes/style-builder';
 import { StyleBuilderFactory } from '../theme/classes/style-builder-factory';
 import {CanBeStyled} from '../theme/interfaces/can-be-styled';
+import {Theme} from '../theme/interfaces/theme.interface';
 
 @Directive()
 export abstract class BaseDirective implements OnInit, OnDestroy, CanBeStyled {
@@ -24,9 +25,9 @@ export abstract class BaseDirective implements OnInit, OnDestroy, CanBeStyled {
   }
 
   ngOnInit(): void {
-    const tokens = this.themeService.getTokens();
-    this.subscription = this.themeService.theme$.subscribe((theme) => {
-      this.applyStyles(tokens, theme);
+    this.subscription = this.themeService.theme$.subscribe((theme: Theme) => {
+      console.log(theme);
+      this.applyStyles(theme);
     });
   }
 
@@ -34,5 +35,5 @@ export abstract class BaseDirective implements OnInit, OnDestroy, CanBeStyled {
     this.subscription?.unsubscribe();
   }
 
-  abstract applyStyles(tokens: any, theme: any): void;
+  abstract applyStyles(theme: Theme): void;
 }

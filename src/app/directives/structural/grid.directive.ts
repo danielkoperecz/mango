@@ -1,5 +1,6 @@
 import {Directive, Input, OnChanges} from '@angular/core';
 import {BaseDirective} from '../base.directive';
+import {Theme} from '../../theme/interfaces/theme.interface';
 
 @Directive({
   selector: '[appGrid]'
@@ -7,13 +8,14 @@ import {BaseDirective} from '../base.directive';
 export class GridDirective extends BaseDirective implements OnChanges {
   @Input() columns: string[] = [];
 
-  applyStyles(tokens: any, theme: any): void {
+  applyStyles(theme: Theme): void {
     this.styles
       .makeItFullHeight()
       .makeItFullWidth()
       .makeItGrid();
   }
 
+  //TODO: ez enm így kell
   ngOnChanges() {
 
     this.renderer.setStyle(this.element, 'gridTemplateColumns', this.columns.join(' '));

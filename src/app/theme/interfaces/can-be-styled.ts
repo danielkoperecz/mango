@@ -1,3 +1,5 @@
+import {Theme} from './theme.interface';
+
 export interface CanBeStyled {
-  applyStyles(tokens?: any, theme?: any): void;
+  applyStyles(theme?: Theme): void;
 }

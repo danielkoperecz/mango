@@ -1,5 +1,6 @@
 import {Directive, Input} from '@angular/core';
 import {BaseDirective} from '../base.directive';
+import {Theme} from '../../theme/interfaces/theme.interface';
 
 @Directive({
   selector: '[appFlex]'
@@ -10,7 +11,7 @@ export class FlexDirective extends BaseDirective {
   @Input() wrap: ' wrap' | '' = '';
   @Input() align: string = 'space-between center';
 
-  applyStyles(tokens: any, theme: any) {
+  applyStyles(theme: Theme) {
     const [justifyContent, alignItems] = this.align.split(' ');
 
     this.renderer.setStyle(this.element, 'display', 'flex');

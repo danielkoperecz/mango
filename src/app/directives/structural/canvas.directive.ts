@@ -6,7 +6,7 @@ import {BaseDirective} from '../base.directive';
 })
 export class CanvasDirective extends BaseDirective {
 
-  applyStyles(tokens: any, theme: any) {
+  applyStyles(theme: any) {
     this.styles
       .makeItFlex('column', false)
       .makeItFullWidth()
@@ -15,7 +15,7 @@ export class CanvasDirective extends BaseDirective {
 
     this.renderer.setStyle(this.element, 'background', theme.background);
     this.renderer.setStyle(this.element, 'color', theme.text);
-    this.renderer.setStyle(this.element, 'gap', tokens.spacing.lg);
+    this.renderer.setStyle(this.element, 'gap', theme.spacing.lg);
     this.renderer.setStyle(this.element, 'alignItems', 'center');
   }
 
