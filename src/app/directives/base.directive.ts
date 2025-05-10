@@ -1,18 +1,27 @@
-// theme-aware.directive.ts
-import { Directive, ElementRef, Renderer2, OnDestroy, OnInit } from '@angular/core';
+import { Directive, ElementRef, Injector, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { Subscription } from 'rxjs';
-import {ThemeService} from '../theme/services/theme.service';
+import { ThemeService } from '../theme/services/theme.service';
+import { StyleBuilder } from '../theme/classes/style-builder';
+import { StyleBuilderFactory } from '../theme/classes/style-builder-factory';
+import {CanBeStyled} from '../theme/interfaces/can-be-styled';
 
 @Directive()
-// abstract because it's not used directly
-export abstract class BaseDirective implements OnInit, OnDestroy {
-  private subscription: Subscription | undefined;
+export abstract class BaseDirective implements OnInit, OnDestroy, CanBeStyled {
+  private subscription?: Subscription;
+  protected styles!: StyleBuilder;
 
-  protected constructor(
-    protected el: ElementRef,
-    protected renderer: Renderer2,
-    protected themeService: ThemeService
-  ) {}
+  protected readonly themeService: ThemeService;
+  protected readonly renderer: Renderer2;
+  protected readonly element: HTMLElement;
+
+  constructor(injector: Injector, elRef: ElementRef, renderer: Renderer2) {
+    this.renderer = renderer;
+    this.element = elRef.nativeElement;
+    this.themeService = injector.get(ThemeService);
+
+    const factory = injector.get(StyleBuilderFactory);
+    this.styles = factory.create(this.renderer, this.element, this.themeService);
+  }
 
   ngOnInit(): void {
     const tokens = this.themeService.getTokens();
@@ -22,11 +31,8 @@ export abstract class BaseDirective implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    if (this.subscription) {
-      this.subscription.unsubscribe();
-    }
+    this.subscription?.unsubscribe();
   }
 
-  // To be overridden by derived directives
-  protected abstract applyStyles(tokens: any, theme: any): void;
+  abstract applyStyles(tokens: any, theme: any): void;
 }

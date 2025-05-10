@@ -25,12 +25,7 @@ type Story = StoryObj<CanvasComponent>;
 export const Default: Story = {
   render: () => ({
     template: `
-      <app-canvas>
-
-      </app-canvas>
+      <app-canvas></app-canvas>
     `,
-    props: {
-      items: Array.from({ length: 5 }, (_, i) => i + 1),
-    },
   }),
 };
