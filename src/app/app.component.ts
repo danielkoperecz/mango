@@ -1,12 +1,25 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {GridComponent} from './components/grid/grid.component';
+import {CanvasComponent} from './components/canvas/canvas.component';
+import {FlexComponent} from './components/flex/flex.component';
+import {ThemeService} from './theme/services/theme.service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [GridComponent, CanvasComponent, FlexComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'framework';
+
+  constructor(private themeService: ThemeService) {}
+
+  switchToLight() {
+    this.themeService.switchToLightTheme();
+  }
+
+  switchToDark() {
+    this.themeService.switchToDarkTheme();
+  }
 }
