@@ -26,7 +26,7 @@ export class StyleBuilder {
 
   makeItGrid(): this {
     this.styleSetter.setStyle(this.el, 'display', 'grid');
-    this.styleSetter.setStyle(this.el, 'gridGap', this.themeService.getTokens().spacing.sm);
+    this.styleSetter.setStyle(this.el, 'gridGap', this.themeService.getTheme().spacing.sm);
     return this;
   }
 
@@ -43,7 +43,7 @@ export class StyleBuilder {
   }
 
   makeItPadded() {
-    this.styleSetter.setStyle(this.el, 'padding', this.themeService.getTokens().spacing.md);
+    this.styleSetter.setStyle(this.el, 'padding', this.themeService.getTheme().spacing.md);
     return this;
   }
 

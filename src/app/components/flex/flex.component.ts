@@ -7,11 +7,12 @@ import {FlexDirective} from '../../directives/structural/flex.directive';
   templateUrl: './flex.component.html',
   hostDirectives: [{
     directive: FlexDirective,
-    inputs: ['direction', 'wrap', 'align']
+    inputs: ['direction', 'wrap', 'justify', 'align']
   }],
 })
 export class FlexComponent {
-  @Input() direction: 'row' | 'column' = 'row';
-  @Input() wrap: ' wrap' | '' = '';
-  @Input() align: string = 'space-between center';
+  @Input() direction?: 'row' | 'column';
+  @Input() wrap?: 'wrap' | 'no-wrap';
+  @Input() justify?: 'space-between' | 'start' | 'end' | 'space-evenly';
+  @Input() align?: 'center' | 'start' | 'end';
 }

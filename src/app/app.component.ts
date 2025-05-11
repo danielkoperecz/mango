@@ -7,10 +7,11 @@ import {HeaderComponent} from './components/header/header.component';
 import {SkeletonLoaderDirective} from './directives/animations/skeleton-loader.directive';
 import {ButtonComponent} from './components/button/button.component';
 import {CardComponent} from './components/card/card.component';
+import {ImageComponent} from './components/image/image.component';
 
 @Component({
   selector: 'app-root',
-  imports: [GridComponent, CanvasComponent, SectionComponent, HeaderComponent, SkeletonLoaderDirective, ButtonComponent, CardComponent],
+  imports: [GridComponent, CanvasComponent, SectionComponent, HeaderComponent, SkeletonLoaderDirective, ButtonComponent, CardComponent, ImageComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

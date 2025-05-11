@@ -1,18 +1,26 @@
-import {AfterViewInit, Component, forwardRef, Input, ViewChild} from '@angular/core';
+import {Component, Input, OnChanges, SimpleChanges, ViewChild} from '@angular/core';
 import {CardDirective} from '../../directives/functional/card.directive';
 import {FlexDirective} from '../../directives/structural/flex.directive';
+import {FlexColumnDirective} from '../../directives/structural/flex-column.directive';
 
 @Component({
   selector: 'app-card',
   imports: [],
   templateUrl: './card.component.html',
   hostDirectives: [
-    CardDirective,
     {
-      directive: FlexDirective,
-      inputs: ['direction'],
+      directive: CardDirective,
+      inputs: ['rounded']
+    },
+    {
+      directive: FlexColumnDirective,
+      inputs: ['wrap', 'align', 'justify']
     }]
 })
 export class CardComponent {
-  @Input() direction: 'row' | 'column' = 'column';
+  @Input() wrap?: ' wrap' | 'no-wrap';
+  @Input() justify?: 'space-between' | 'start' | 'end' | 'space-evenly';
+  @Input() align?: 'center' | 'start' | 'end';
+  @Input() rounded?: boolean;
+
 }

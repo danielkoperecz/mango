@@ -21,7 +21,7 @@ export class ThemeService {
     colors: {
       primary: '#bb86fc',
       secondary: '#03dac6',
-      background: '#121212',
+      background: '#272728',
       text: '#ffffff',
       border: '#444444',
     },
@@ -38,18 +38,8 @@ export class ThemeService {
 
   theme$ = this.themeSubject.asObservable();
 
-  getTokens() {
-    return this.designTokens;
-  }
-
   getTheme() {
     return this.themeSubject.getValue();
-  }
-
-  getFullTheme() {
-    return {
-      ...this.themeSubject.getValue(), // Include both theme (colors) and design tokens
-    };
   }
 
   switchToDarkTheme() {

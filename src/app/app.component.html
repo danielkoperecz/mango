@@ -24,7 +24,11 @@
     <div>hello</div>
     <div>hello</div>
     <div>hello</div>
-    <div>hello</div>
+    <app-card>
+      <app-image [src]="'https://www.fuggonyneked.hu/images/joshop/products/kepek/60-90/651.jpg'"></app-image>
+      <div>hello</div>
+      <div>hello</div>
+    </app-card>
     <div>hello</div>
     <div>hello</div>
     <app-button
@@ -33,8 +37,8 @@
       [success]="true"
       (click)="switchToLight()">
     </app-button>
-    <app-card [direction]="'column'">
-      <div>hello</div>
+    <app-card [rounded]="true">
+      <app-image [src]="'https://www.fuggonyneked.hu/images/joshop/products/kepek/60-90/651.jpg'"></app-image>
       <div>hello</div>
       <div>hello</div>
     </app-card>
@@ -56,8 +60,4 @@
 <app-section>
   <div appSkeletonLoader height="120px" width="60%"></div>
 </app-section>
-<app-card direction="column">
-    <div>hello</div>
-    <div>hello</div>
-    <div>hello</div>
-</app-card>
+

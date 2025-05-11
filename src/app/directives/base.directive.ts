@@ -39,5 +39,5 @@ export abstract class BaseDirective implements OnInit, OnDestroy, CanBeStyled {
     this.subscription?.unsubscribe();
   }
 
-  abstract applyStyles(theme: Theme): void;
+  abstract applyStyles(theme?: Theme): void;
 }
