@@ -30,6 +30,7 @@ export abstract class BaseDirective implements OnInit, OnDestroy, CanBeStyled {
   }
 
   ngOnInit(): void {
+    this.disableExternalStyling()
     this.subscription = this.themeService.theme$.subscribe((theme: Theme) => {
       this.applyStyles(theme);
     });
@@ -37,6 +38,11 @@ export abstract class BaseDirective implements OnInit, OnDestroy, CanBeStyled {
 
   ngOnDestroy(): void {
     this.subscription?.unsubscribe();
+  }
+
+  disableExternalStyling() {
+    this.renderer.removeAttribute(this.element, 'class');
+    this.renderer.removeAttribute(this.element, 'id');
   }
 
   abstract applyStyles(theme?: Theme): void;

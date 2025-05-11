@@ -20,5 +20,6 @@ export class SectionDirective extends BaseDirective {
     this.styleSetter.setStyle(element, 'width', '100%');
     this.styleSetter.setStyle(element, 'display', 'flex');
     this.styleSetter.setStyle(element, 'flexDirection', 'column');
+    this.styleSetter.setStyle(element, 'outline', '1px solid red');
   }
 }

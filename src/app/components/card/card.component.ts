@@ -1,12 +1,12 @@
-import {Component, Input, OnChanges, SimpleChanges, ViewChild} from '@angular/core';
+import {Component, Input, ViewEncapsulation} from '@angular/core';
 import {CardDirective} from '../../directives/functional/card.directive';
-import {FlexDirective} from '../../directives/structural/flex.directive';
 import {FlexColumnDirective} from '../../directives/structural/flex-column.directive';
 
 @Component({
   selector: 'app-card',
   imports: [],
   templateUrl: './card.component.html',
+  encapsulation: ViewEncapsulation.Emulated,
   hostDirectives: [
     {
       directive: CardDirective,

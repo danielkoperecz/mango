@@ -12,9 +12,9 @@ export class FlexRowDirective extends BaseDirective {
   @Input() align: 'center' | 'start' | 'end'  = 'start';
 
   applyStyles(theme?: Theme) {
-    this.styleSetter.setStyle(this.element, 'display', 'flex');
-    this.styleSetter.setStyle(this.element, 'flexDirection', 'row');
-    this.styleSetter.setStyle(this.element, 'flexWrap', this.wrap);
+    this.styles
+      .makeItFlex('row', this.wrap)
+
     this.styleSetter.setStyle(this.element, 'justifyContent', this.justify);
     this.styleSetter.setStyle(this.element, 'alignItems', this.align);
   }

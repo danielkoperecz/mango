@@ -30,9 +30,10 @@ export class StyleBuilder {
     return this;
   }
 
-  makeItFlex(direction: 'row' | 'column' = "row", wrap: boolean = false): this {
+  makeItFlex(direction: 'row' | 'column' = "row", wrap: 'wrap' | 'no-wrap'): this {
     this.styleSetter.setStyle(this.el, 'display', 'flex');
-    this.styleSetter.setStyle(this.el, 'flexFlow', wrap ? direction + " " + wrap: direction);
+    this.styleSetter.setStyle(this.el, 'flexDirection', direction);
+    this.styleSetter.setStyle(this.el, 'flexWrap', wrap);
     return this;
   }
 
@@ -59,6 +60,11 @@ export class StyleBuilder {
 
   makeItOutlined() {
     this.styleSetter.setStyle(this.el, 'outline', '1px solid grey');
+    return this;
+  }
+
+  makeItOverflowHidden() {
+    this.styleSetter.setStyle(this.el, 'overflow', 'hidden');
     return this;
   }
 }

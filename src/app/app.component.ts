@@ -3,15 +3,14 @@ import {GridComponent} from './components/grid/grid.component';
 import {CanvasComponent} from './components/canvas/canvas.component';
 import {ThemeService} from './theme/services/theme.service';
 import {SectionComponent} from './components/section/section.component';
-import {HeaderComponent} from './components/header/header.component';
-import {SkeletonLoaderDirective} from './directives/animations/skeleton-loader.directive';
 import {ButtonComponent} from './components/button/button.component';
 import {CardComponent} from './components/card/card.component';
-import {ImageComponent} from './components/image/image.component';
+import {NgOptimizedImage, NgStyle} from '@angular/common';
+import {FlexComponent} from './components/flex/flex.component';
 
 @Component({
   selector: 'app-root',
-  imports: [GridComponent, CanvasComponent, SectionComponent, HeaderComponent, SkeletonLoaderDirective, ButtonComponent, CardComponent, ImageComponent],
+  imports: [GridComponent, CanvasComponent, SectionComponent, ButtonComponent, CardComponent, NgOptimizedImage, FlexComponent, NgStyle],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -1,63 +1,100 @@
-<app-header [sticky]="true">
-  <div>hello</div>
-  <div></div>
-  <div>hello</div>
-  <div></div>
-  <div>hello</div>
-</app-header>
+<!--<<app-header [sticky]="true">-->
+<!--  <div>hello</div>-->
+<!--  <div></div>-->
+<!--  <div>hello</div>-->
+<!--  <div></div>-->
+<!--  <div>hello</div>-->
+<!--</app-header>-->
+<!--<app-canvas>-->
+<!--  <app-grid [columns]="['1fr', '3fr', '1fr']">-->
+<!--    <div>hello</div>-->
+<!--    <div>hello</div>-->
+<!--    <div></div>-->
+<!--    <div>hello</div>-->
+<!--    <div></div>-->
+<!--    <div>hello</div>-->
+<!--  </app-grid>-->
+<!--  <app-grid [columns]="['80px', '3fr', '1fr']">-->
+<!--    <div>hello</div>-->
+<!--    <div>hello</div>-->
+<!--    <div></div>-->
+<!--    <div>hello</div>-->
+<!--    <div>hello</div>-->
+<!--    <div></div>-->
+<!--    <div>hello</div>-->
+<!--    <div>hello</div>-->
+<!--    <div>hello</div>-->
+<!--    <app-card>-->
+<!--      <app-image [src]="'https://www.fuggonyneked.hu/images/joshop/products/kepek/60-90/651.jpg'"></app-image>-->
+<!--      <div>hello</div>-->
+<!--      <div>hello</div>-->
+<!--    </app-card>-->
+<!--    <div>hello</div>-->
+<!--    <div>hello</div>-->
+<!--    <app-button-->
+<!--      [rounded]="false"-->
+<!--      [text]="'Light Theme'"-->
+<!--      [success]="true"-->
+<!--      (click)="switchToLight()">-->
+<!--    </app-button>-->
+<!--    <app-card [rounded]="true">-->
+<!--      <app-image [src]="'https://www.fuggonyneked.hu/images/joshop/products/kepek/60-90/651.jpg'"></app-image>-->
+<!--      <div>hello</div>-->
+<!--      <div>hello</div>-->
+<!--    </app-card>-->
+<!--    <div>hello</div>-->
+<!--  </app-grid>-->
+<!--  <app-button-->
+<!--    [rounded]="true"-->
+<!--    [text]="'Light Theme'"-->
+<!--    [success]="true"-->
+<!--    (click)="switchToLight()">-->
+<!--  </app-button>-->
+<!--  <app-button-->
+<!--    [rounded]="true"-->
+<!--    [text]="'Dark Theme'"-->
+<!--    [error]="true"-->
+<!--    (click)="switchToDark()">-->
+<!--  </app-button>-->
+<!--</app-canvas>-->
+<!--<app-section>-->
+<!--  <div appSkeletonLoader height="120px" width="60%"></div>-->
+<!--</app-section>-->
 <app-canvas>
-  <app-grid [columns]="['1fr', '3fr', '1fr']">
-    <div>hello</div>
-    <div>hello</div>
-    <div></div>
-    <div>hello</div>
-    <div></div>
-    <div>hello</div>
-  </app-grid>
-  <app-grid [columns]="['80px', '3fr', '1fr']">
-    <div>hello</div>
-    <div>hello</div>
-    <div></div>
-    <div>hello</div>
-    <div>hello</div>
-    <div></div>
-    <div>hello</div>
-    <div>hello</div>
-    <div>hello</div>
-    <app-card>
-      <app-image [src]="'https://www.fuggonyneked.hu/images/joshop/products/kepek/60-90/651.jpg'"></app-image>
-      <div>hello</div>
-      <div>hello</div>
-    </app-card>
-    <div>hello</div>
-    <div>hello</div>
-    <app-button
-      [rounded]="false"
-      [text]="'Light Theme'"
-      [success]="true"
-      (click)="switchToLight()">
-    </app-button>
+  <app-grid [columns]="['1fr', '1fr']">
     <app-card [rounded]="true">
-      <app-image [src]="'https://www.fuggonyneked.hu/images/joshop/products/kepek/60-90/651.jpg'"></app-image>
-      <div>hello</div>
-      <div>hello</div>
+      <img card-image priority ngSrc="https://www.fuggonyneked.hu/images/joshop/products/kepek/60-90/651.jpg"
+           alt=""
+           height="100"
+           width="100"
+      >
+      <div card-title>Hello</div>
+      <app-flex [wrap]="'wrap'" card-content>
+        ContentContentContentContentContent ContentContentContentContentContentContentContentContent ContentContentContentContentContentContentContentContent ContentContentContentContentContentContentContentContent ContentContentContent
+      </app-flex>
+      <app-flex card-actions>
+        <app-button [text]="'Yes'" [success]="true"></app-button>
+        <app-button [text]="'No'" [error]="true"></app-button>
+      </app-flex>
     </app-card>
-    <div>hello</div>
+    <app-card [rounded]="true">
+      <img card-image priority ngSrc="https://www.fuggonyneked.hu/images/joshop/products/kepek/60-90/651.jpg"
+           alt=""
+           height="100"
+           width="100"
+      >
+      <div card-title>Hello</div>
+      <app-flex [wrap]="'wrap'" card-content>
+        ContentContentContentContentContent ContentContentContentContentContentContentContentContent ContentContentContentContentContentContentContentContent ContentContentContentContentContentContentContentContent ContentContentContent
+      </app-flex>
+      <app-flex card-actions>
+        <app-button [text]="'Yes'" [success]="true"></app-button>
+        <app-button [text]="'No'" [error]="true"></app-button>
+      </app-flex>
+    </app-card>
   </app-grid>
-  <app-button
-    [rounded]="true"
-    [text]="'Light Theme'"
-    [success]="true"
-    (click)="switchToLight()">
-  </app-button>
-  <app-button
-    [rounded]="true"
-    [text]="'Dark Theme'"
-    [error]="true"
-    (click)="switchToDark()">
-  </app-button>
+
 </app-canvas>
-<app-section>
-  <div appSkeletonLoader height="120px" width="60%"></div>
-</app-section>
+<app-section></app-section>
+<app-section></app-section>
 

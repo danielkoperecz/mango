@@ -5,3 +5,7 @@
 .hello {
   outline: 1px solid green;
 }
+
+.card {
+  color: red;
+}
