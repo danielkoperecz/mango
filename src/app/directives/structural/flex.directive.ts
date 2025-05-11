@@ -1,4 +1,4 @@
-import {Directive, Input} from '@angular/core';
+import {Directive, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {BaseDirective} from '../base.directive';
 import {Theme} from '../../theme/interfaces/theme.interface';
 
@@ -8,17 +8,21 @@ import {Theme} from '../../theme/interfaces/theme.interface';
 export class FlexDirective extends BaseDirective {
 
   @Input() direction: 'row' | 'column' = 'row';
-  @Input() wrap: ' wrap' | '' = '';
-  @Input() align: string = 'space-between center';
+  @Input() wrap: 'wrap' | 'no-wrap' = 'no-wrap';
+  @Input() justify: 'space-between' | 'start' | 'end' | 'space-evenly' = 'space-between';
+  @Input() align: 'center' | 'start' | 'end'  = 'center';
 
-  applyStyles(theme: Theme) {
-    const [justifyContent, alignItems] = this.align.split(' ');
+  applyStyles(theme?: Theme) {
 
-    this.renderer.setStyle(this.element, 'display', 'flex');
-    this.renderer.setStyle(this.element, 'flexFlow', this.direction + this.wrap);
-    this.renderer.setStyle(this.element, 'justifyContent', justifyContent);
-    this.renderer.setStyle(this.element, 'alignItems', alignItems);
-    this.renderer.setStyle(this.element, 'width', '100%');
-    this.renderer.setStyle(this.element, 'height', '100%');
+    console.log(this.direction)
+
+    this.styleSetter.setStyle(this.element, 'display', 'flex');
+    this.styleSetter.setStyle(this.element, 'flexDirection', this.direction);
+    this.styleSetter.setStyle(this.element, 'flexWrap', this.wrap);
+    this.styleSetter.setStyle(this.element, 'justifyContent', this.justify);
+    this.styleSetter.setStyle(this.element, 'alignItems', this.align);
+    this.styleSetter.setStyle(this.element, 'width', '100%');
+    this.styleSetter.setStyle(this.element, 'height', '100%');
   }
+
 }

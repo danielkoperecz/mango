@@ -28,32 +28,36 @@
     <div>hello</div>
     <div>hello</div>
     <app-button
-      [rounded]="true"
+      [rounded]="false"
       [text]="'Light Theme'"
       [success]="true"
       (click)="switchToLight()">
     </app-button>
-    <div></div>
+    <app-card [direction]="'column'">
+      <div>hello</div>
+      <div>hello</div>
+      <div>hello</div>
+    </app-card>
     <div>hello</div>
   </app-grid>
-  <app-flex>
-    <div>flex</div>
-    <div>element</div>
-    <div>element</div>
-    <div>element</div>
-    <div>element</div>
-    <div>element</div>
-    <div>element</div>
-    <div>element</div>
-  </app-flex>
   <app-button
     [rounded]="true"
     [text]="'Light Theme'"
     [success]="true"
     (click)="switchToLight()">
   </app-button>
-  <button appBounceClick (click)="switchToDark()">Dark Theme</button>
+  <app-button
+    [rounded]="true"
+    [text]="'Dark Theme'"
+    [error]="true"
+    (click)="switchToDark()">
+  </app-button>
 </app-canvas>
 <app-section>
   <div appSkeletonLoader height="120px" width="60%"></div>
 </app-section>
+<app-card direction="column">
+    <div>hello</div>
+    <div>hello</div>
+    <div>hello</div>
+</app-card>

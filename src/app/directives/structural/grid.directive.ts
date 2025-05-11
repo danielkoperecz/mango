@@ -18,11 +18,11 @@ export class GridDirective extends BaseDirective implements OnChanges {
   //TODO: ez enm így kell
   ngOnChanges() {
 
-    this.renderer.setStyle(this.element, 'gridTemplateColumns', this.columns.join(' '));
+    this.styleSetter.setStyle(this.element, 'gridTemplateColumns', this.columns.join(' '));
 
     // Apply outline to each direct child
     Array.from(this.element.children).forEach((child: any) => {
-      this.renderer.setStyle(child, 'outline', '1px solid red');
+      this.styleSetter.setStyle(child, 'outline', '1px solid red');
     });
   }
 }

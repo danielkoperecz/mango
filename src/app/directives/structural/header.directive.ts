@@ -1,8 +1,6 @@
 // header.directive.ts
-import { Directive, ElementRef, Input, Renderer2, OnChanges, SimpleChanges } from '@angular/core';
-import { ThemeService } from '../../theme/services/theme.service';
+import { Directive, Input} from '@angular/core';
 import {BaseDirective} from '../base.directive';
-import {StyleService} from '../../theme/services/style.service';
 import {Theme} from '../../theme/interfaces/theme.interface';
 
 @Directive({
@@ -14,19 +12,19 @@ export class HeaderDirective extends BaseDirective {
   applyStyles(theme: Theme): void {
     const element = this.element;
 
-    this.renderer.setStyle(element, 'padding', theme.spacing.md);
-    this.renderer.setStyle(element, 'background', 'red');
-    this.renderer.setStyle(element, 'color', theme.colors.text);
-    this.renderer.setStyle(element, 'boxSizing', 'border-box');
-    this.renderer.setStyle(element, 'width', '100%');
-    this.renderer.setStyle(element, 'zIndex', '1000');
+    this.styleSetter.setStyle(element, 'padding', theme.spacing.md);
+    this.styleSetter.setStyle(element, 'background', 'red');
+    this.styleSetter.setStyle(element, 'color', theme.colors.text);
+    this.styleSetter.setStyle(element, 'boxSizing', 'border-box');
+    this.styleSetter.setStyle(element, 'width', '100%');
+    this.styleSetter.setStyle(element, 'zIndex', '1000');
 
     if (this.sticky) {
-      this.renderer.setStyle(element, 'position', 'sticky');
-      this.renderer.setStyle(element, 'top', '0');
+      this.styleSetter.setStyle(element, 'position', 'sticky');
+      this.styleSetter.setStyle(element, 'top', '0');
     } else {
-      this.renderer.removeStyle(element, 'position');
-      this.renderer.removeStyle(element, 'top');
+      this.styleSetter.removeStyle(element, 'position');
+      this.styleSetter.removeStyle(element, 'top');
     }
   }
 }

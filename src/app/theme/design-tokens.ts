@@ -1,10 +1,14 @@
-export const DesignTokens = {
+import {Theme} from './interfaces/theme.interface';
+
+export const DesignTokens: Theme = {
   colors: {
     primary: '#6200ee',
     secondary: '#03dac6',
     background: '#ffffff',
     text: '#000000',
     border: '#cccccc',
+    error: '#e40707',
+    success: '#63e407'
   },
   spacing: {
     xs: '4px',
@@ -15,7 +19,7 @@ export const DesignTokens = {
   },
   typography: {
     fontFamily: "'Roboto', sans-serif",
-    fontSize: '16px',
+    fontSize: '14px',
     fontWeight: '400',
     lineHeight: '1.5',
   },

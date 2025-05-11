@@ -2,6 +2,106 @@
     "pipes": [],
     "interfaces": [
         {
+            "name": "CanBeStyled",
+            "id": "interface-CanBeStyled-94fe079c4cebc55cd007e70320fa36d7099737d4b6be2d45d2844b53cb4a6677f36af66cd77b01233e00e076ff4a6c2010bc5e3239018e59408fdd2489e88dac",
+            "file": "src/app/theme/interfaces/can-be-styled.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import {Theme} from './theme.interface';\n\nexport interface CanBeStyled {\n  applyStyles(theme?: Theme): void;\n}\n",
+            "properties": [],
+            "indexSignatures": [],
+            "kind": 173,
+            "methods": [
+                {
+                    "name": "applyStyles",
+                    "args": [
+                        {
+                            "name": "theme",
+                            "type": "Theme",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "optional": true
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 4,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "theme",
+                            "type": "Theme",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "optional": true,
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "extends": []
+        },
+        {
+            "name": "Theme",
+            "id": "interface-Theme-77b53c8d4b567bdcdfea1faea641b37856ea4af0fb8ea73d90279988777d9f95538b6194dd1a39266a01bed456aca01edd2e217d446b0d0889af35ad08bfad8b",
+            "file": "src/app/theme/interfaces/theme.interface.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface Theme {\n  colors: {\n    primary: string;\n    secondary: string;\n    background: string;\n    text: string;\n    border: string;\n    error: string;\n    success: string;\n    [key: string]: string | undefined;\n  };\n  spacing: {\n    xs: string;\n    sm: string;\n    md: string;\n    lg: string;\n    xl: string;\n  };\n  typography: {\n    fontFamily: string;\n    fontSize: string;\n    fontWeight: string;\n    lineHeight: string;\n  };\n  borderRadius: {\n    sm: string;\n    md: string;\n    lg: string;\n  };\n}\n",
+            "properties": [
+                {
+                    "name": "borderRadius",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "literal type",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 25
+                },
+                {
+                    "name": "colors",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "literal type",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "spacing",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "literal type",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "typography",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "literal type",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
             "name": "User",
             "id": "interface-User-d4821beac0e4a852e513391b7470981c4353fdd95a18628bb68136c8695b489ee15b926e2e5031bc26cf30e1508e0a362c3ee13a06734702b4d15af140e485d5",
             "file": "src/stories/user.ts",
@@ -28,6 +128,79 @@
         }
     ],
     "injectables": [
+        {
+            "name": "StyleBuilderFactory",
+            "id": "injectable-StyleBuilderFactory-409a2694344657da751c4bc298380b9d0456e7aeb20298a5e84e6c7e97009133ef9a09235edbbfd7624194d5eb52c0903f70538de260079192dfaf6fb6a97ad7",
+            "file": "src/app/theme/classes/style-builder-factory.ts",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "create",
+                    "args": [
+                        {
+                            "name": "renderer",
+                            "type": "Renderer2",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "el",
+                            "type": "HTMLElement",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "themeService",
+                            "type": "ThemeService",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "StyleBuilder",
+                    "typeParameters": [],
+                    "line": 7,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "renderer",
+                            "type": "Renderer2",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "el",
+                            "type": "HTMLElement",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "themeService",
+                            "type": "ThemeService",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable, Renderer2 } from '@angular/core';\nimport { StyleBuilder } from './style-builder';\nimport {ThemeService} from '../services/theme.service';\n\n@Injectable({ providedIn: 'root' })\nexport class StyleBuilderFactory {\n  create(renderer: Renderer2, el: HTMLElement, themeService: ThemeService): StyleBuilder {\n    return new StyleBuilder(renderer, el, themeService);\n  }\n}\n",
+            "extends": [],
+            "type": "injectable"
+        },
         {
             "name": "StyleService",
             "id": "injectable-StyleService-0b6b2155dd2a376b8dc20ff3d630e56689720d69367ef9c4f0c9ccd08863a13a076101c2761b02a35b7297e0fe535a4bb31534ee644817782a61cc73063e189c",
@@ -553,26 +726,40 @@
         },
         {
             "name": "ThemeService",
-            "id": "injectable-ThemeService-38e928c7296e3c4e1eb2eb6abcec306b73ad8726d5c5331c1a24dc8aa3ecaa73d2a084b0051166b02061e394e3f44463cdf3553cb2c1d1e5bdc2ec14a17d800f",
+            "id": "injectable-ThemeService-ab856b49839e9b2c07898277b8b8a7ab06f0c6f0d3b91e91dfc08dc5abe4e04c703c7af4f13b049f870c3fdd20eccdabb87d9aa9dfc3d7534442b655f1de5dc1",
             "file": "src/app/theme/services/theme.service.ts",
             "properties": [
                 {
                     "name": "darkTheme",
-                    "defaultValue": "{\n    background: '#121212',\n    text: '#ffffff',\n  }",
+                    "defaultValue": "{\n    colors: {\n      primary: '#bb86fc',\n      secondary: '#03dac6',\n      background: '#121212',\n      text: '#ffffff',\n      border: '#444444',\n    },\n  }",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "object",
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 15,
+                    "line": 20,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "designTokens",
+                    "defaultValue": "DesignTokens",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 31,
                     "modifierKind": [
                         123
                     ]
                 },
                 {
                     "name": "lightTheme",
-                    "defaultValue": "{\n    background: '#ffffff',\n    text: '#000000',\n  }",
+                    "defaultValue": "{\n    colors: {\n      primary: '#6200ee',\n      secondary: '#03dac6',\n      background: '#ffffff',\n      text: '#000000',\n      border: '#cccccc',\n    },\n  }",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "object",
@@ -593,32 +780,18 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 23
+                    "line": 39
                 },
                 {
                     "name": "themeSubject",
-                    "defaultValue": "new BehaviorSubject(this.lightTheme)",
+                    "defaultValue": "new BehaviorSubject<Theme>({\n    ...this.lightTheme,\n    ...this.designTokens, // Merge design tokens into the theme\n  })",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 22,
-                    "modifierKind": [
-                        123
-                    ]
-                },
-                {
-                    "name": "tokens",
-                    "defaultValue": "DesignTokens",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 20,
+                    "line": 34,
                     "modifierKind": [
                         123
                     ]
@@ -626,12 +799,22 @@
             ],
             "methods": [
                 {
+                    "name": "getFullTheme",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 49,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
                     "name": "getTheme",
                     "args": [],
                     "optional": false,
                     "returnType": "any",
                     "typeParameters": [],
-                    "line": 29,
+                    "line": 45,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -641,7 +824,7 @@
                     "optional": false,
                     "returnType": "any",
                     "typeParameters": [],
-                    "line": 25,
+                    "line": 41,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -651,7 +834,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 33,
+                    "line": 55,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -661,7 +844,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 37,
+                    "line": 63,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -670,23 +853,235 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\nimport { BehaviorSubject } from 'rxjs';\nimport {DesignTokens} from '../design-tokens';\n\n@Injectable({\n  providedIn: 'root',\n})\nexport class ThemeService {\n  private lightTheme = {\n    background: '#ffffff',\n    text: '#000000',\n  };\n\n  private darkTheme = {\n    background: '#121212',\n    text: '#ffffff',\n  };\n\n  private tokens = DesignTokens\n\n  private themeSubject = new BehaviorSubject(this.lightTheme);\n  theme$ = this.themeSubject.asObservable();\n\n  getTokens() {\n    return this.tokens;\n  }\n\n  getTheme() {\n    return this.themeSubject.getValue();\n  }\n\n  switchToDarkTheme() {\n    this.themeSubject.next(this.darkTheme);\n  }\n\n  switchToLightTheme() {\n    this.themeSubject.next(this.lightTheme);\n  }\n}\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { BehaviorSubject } from 'rxjs';\nimport { DesignTokens } from '../design-tokens';\nimport {Theme} from '../interfaces/theme.interface'; // Assuming design tokens are stored here\n\n@Injectable({\n  providedIn: 'root',\n})\nexport class ThemeService {\n  private lightTheme = {\n    colors: {\n      primary: '#6200ee',\n      secondary: '#03dac6',\n      background: '#ffffff',\n      text: '#000000',\n      border: '#cccccc',\n    },\n  };\n\n  private darkTheme = {\n    colors: {\n      primary: '#bb86fc',\n      secondary: '#03dac6',\n      background: '#121212',\n      text: '#ffffff',\n      border: '#444444',\n    },\n  };\n\n  // The DesignTokens structure is loaded directly into the theme\n  private designTokens = DesignTokens;\n\n  // The theme is a combination of the light/dark theme and design tokens\n  private themeSubject = new BehaviorSubject<Theme>({\n    ...this.lightTheme,\n    ...this.designTokens, // Merge design tokens into the theme\n  });\n\n  theme$ = this.themeSubject.asObservable();\n\n  getTokens() {\n    return this.designTokens;\n  }\n\n  getTheme() {\n    return this.themeSubject.getValue();\n  }\n\n  getFullTheme() {\n    return {\n      ...this.themeSubject.getValue(), // Include both theme (colors) and design tokens\n    };\n  }\n\n  switchToDarkTheme() {\n    const darkTheme = {\n      ...this.designTokens, // Merge design tokens into dark theme\n      ...this.darkTheme,\n    } as Theme;\n    this.themeSubject.next(darkTheme);\n  }\n\n  switchToLightTheme() {\n    const lightTheme = {\n      ...this.designTokens, // Merge design tokens into light theme\n      ...this.lightTheme,\n    } as Theme;\n    this.themeSubject.next(lightTheme);\n  }\n}\n",
             "extends": [],
             "type": "injectable"
         }
     ],
     "guards": [],
     "interceptors": [],
-    "classes": [],
+    "classes": [
+        {
+            "name": "StyleBuilder",
+            "id": "class-StyleBuilder-14798cf6240b96cba064f539ffc8a109c4cdc944ec36ad1a6c91822d393b85847484e81c54e2f28494e094dfc8ceb6040f16716b857afd7314a809aa9f70440a",
+            "file": "src/app/theme/classes/style-builder.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "class",
+            "sourceCode": "import {Renderer2} from '@angular/core';\nimport {ThemeService} from '../services/theme.service';\n\nexport class StyleBuilder {\n  constructor(\n    private renderer: Renderer2,\n    private el: HTMLElement,\n    private themeService: ThemeService,\n  ) {\n    this.default()\n  }\n\n  default() {\n    this.renderer.setStyle(this.el, 'box-sizing', 'border-box');\n  }\n\n  makeItFullHeight(): this {\n    this.renderer.setStyle(this.el, 'height', '100%');\n    return this;\n  }\n\n  makeItFullWidth(): this {\n    this.renderer.setStyle(this.el, 'width', '100%');\n    return this;\n  }\n\n  makeItGrid(): this {\n    this.renderer.setStyle(this.el, 'display', 'grid');\n    this.renderer.setStyle(this.el, 'gridGap', this.themeService.getTokens().spacing.sm);\n    return this;\n  }\n\n  makeItFlex(direction: 'row' | 'column' = \"row\", wrap: boolean = false): this {\n    this.renderer.setStyle(this.el, 'display', 'flex');\n    this.renderer.setStyle(this.el, 'flexFlow', wrap ? direction + \" \" + wrap: direction);\n    return this;\n  }\n\n  // Add other helpers...\n  makeItOverflowXHidden() {\n    this.renderer.setStyle(this.el, 'overflowX', 'hidden');\n    return this;\n  }\n\n  makeItPadded() {\n    this.renderer.setStyle(this.el, 'padding', this.themeService.getTokens().spacing.md);\n    return this;\n  }\n\n  makeItRounded() {\n    this.renderer.setStyle(this.el, 'border-radius', this.themeService.getTheme().borderRadius.md);\n    return this;\n  }\n\n  makeItShadowed() {\n    this.renderer.setStyle(this.el, 'box-shadow', '8px');\n    return this;\n  }\n\n  makeItOutlined() {\n    this.renderer.setStyle(this.el, 'outline', '1px solid grey');\n    return this;\n  }\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "renderer",
+                        "type": "Renderer2",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "el",
+                        "type": "HTMLElement",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "themeService",
+                        "type": "ThemeService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 4,
+                "jsdoctags": [
+                    {
+                        "name": "renderer",
+                        "type": "Renderer2",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "el",
+                        "type": "HTMLElement",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "themeService",
+                        "type": "ThemeService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "inputsClass": [],
+            "outputsClass": [],
+            "properties": [],
+            "methods": [
+                {
+                    "name": "default",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 13,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "makeItFlex",
+                    "args": [
+                        {
+                            "name": "direction",
+                            "type": "\"row\" | \"column\"",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "\"row\""
+                        },
+                        {
+                            "name": "wrap",
+                            "type": "boolean",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "false"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "",
+                    "typeParameters": [],
+                    "line": 33,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "direction",
+                            "type": "\"row\" | \"column\"",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "\"row\"",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "wrap",
+                            "type": "boolean",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "false",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "makeItFullHeight",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "makeItFullWidth",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "",
+                    "typeParameters": [],
+                    "line": 22,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "makeItGrid",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "",
+                    "typeParameters": [],
+                    "line": 27,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "makeItOutlined",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "this",
+                    "typeParameters": [],
+                    "line": 60,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "makeItOverflowXHidden",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "this",
+                    "typeParameters": [],
+                    "line": 40,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "makeItPadded",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "this",
+                    "typeParameters": [],
+                    "line": 45,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "makeItRounded",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "this",
+                    "typeParameters": [],
+                    "line": 50,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "makeItShadowed",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "this",
+                    "typeParameters": [],
+                    "line": 55,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "indexSignatures": [],
+            "extends": [],
+            "hostBindings": [],
+            "hostListeners": []
+        }
+    ],
     "directives": [
         {
             "name": "BaseDirective",
-            "id": "directive-BaseDirective-629ef940bca8b006e7f38cd55bd13c1c4b35b0c437eef3d13a9a5673f800afa24d66d283fd4d52355ff8e3ff2aa7f7019ad2f49253b0dcc37ed321fe9ebba0ea",
+            "id": "directive-BaseDirective-c6453f80d44807d5f24cf1b4e9f838252a2fd72c3774987748e42fd7a46d0ef5bea7d16a35632d3216c724c0c39b066a1a16e8b187a233df6d740bd85bb3212c",
             "file": "src/app/directives/base.directive.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Directive, ElementRef, Renderer2, OnDestroy, OnInit } from '@angular/core';\nimport { Subscription } from 'rxjs';\nimport {ThemeService} from '../theme/services/theme.service';\nimport {StyleService} from '../theme/services/style.service';\n\n@Directive()\n// abstract because it's not used directly\nexport abstract class BaseDirective implements OnInit, OnDestroy {\n  private subscription: Subscription | undefined;\n\n  protected constructor(\n    protected el: ElementRef,\n    protected renderer: Renderer2,\n    protected themeService: ThemeService,\n    protected styleService: StyleService\n  ) {}\n\n  ngOnInit(): void {\n    const tokens = this.themeService.getTokens();\n    this.subscription = this.themeService.theme$.subscribe((theme) => {\n      this.applyStyles(tokens, theme);\n    });\n  }\n\n  ngOnDestroy(): void {\n    if (this.subscription) {\n      this.subscription.unsubscribe();\n    }\n  }\n\n  // To be overridden by derived directives\n  protected abstract applyStyles(tokens: any, theme: any): void;\n}\n",
+            "sourceCode": "import { Directive, ElementRef, Injector, OnDestroy, OnInit, Renderer2 } from '@angular/core';\nimport { Subscription } from 'rxjs';\nimport { ThemeService } from '../theme/services/theme.service';\nimport { StyleBuilder } from '../theme/classes/style-builder';\nimport { StyleBuilderFactory } from '../theme/classes/style-builder-factory';\nimport {CanBeStyled} from '../theme/interfaces/can-be-styled';\nimport {Theme} from '../theme/interfaces/theme.interface';\n\n@Directive()\nexport abstract class BaseDirective implements OnInit, OnDestroy, CanBeStyled {\n  private subscription?: Subscription;\n  protected styles!: StyleBuilder;\n\n  protected readonly themeService: ThemeService;\n  protected readonly renderer: Renderer2;\n  protected readonly element: HTMLElement;\n\n  constructor(injector: Injector, elRef: ElementRef, renderer: Renderer2) {\n    this.renderer = renderer;\n    this.element = elRef.nativeElement;\n    this.themeService = injector.get(ThemeService);\n\n    const factory = injector.get(StyleBuilderFactory);\n    this.styles = factory.create(this.renderer, this.element, this.themeService);\n  }\n\n  ngOnInit(): void {\n    this.subscription = this.themeService.theme$.subscribe((theme: Theme) => {\n      this.applyStyles(theme);\n    });\n  }\n\n  ngOnDestroy(): void {\n    this.subscription?.unsubscribe();\n  }\n\n  abstract applyStyles(theme: Theme): void;\n}\n",
             "providers": [],
             "hostDirectives": [],
             "standalone": false,
@@ -698,6 +1093,489 @@
             "hostListeners": [],
             "propertiesClass": [
                 {
+                    "name": "element",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "HTMLElement",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "modifierKind": [
+                        124,
+                        148
+                    ]
+                },
+                {
+                    "name": "renderer",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Renderer2",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "modifierKind": [
+                        124,
+                        148
+                    ]
+                },
+                {
+                    "name": "styles",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StyleBuilder",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        124
+                    ]
+                },
+                {
+                    "name": "subscription",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Subscription",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 11,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "themeService",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ThemeService",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "modifierKind": [
+                        124,
+                        148
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "applyStyles",
+                    "args": [
+                        {
+                            "name": "theme",
+                            "type": "Theme",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 37,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        128
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "theme",
+                            "type": "Theme",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 33,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 27,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "extends": [],
+            "implements": [
+                "OnInit",
+                "OnDestroy",
+                "CanBeStyled"
+            ],
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "injector",
+                        "type": "Injector",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "elRef",
+                        "type": "ElementRef",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "renderer",
+                        "type": "Renderer2",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 16,
+                "jsdoctags": [
+                    {
+                        "name": "injector",
+                        "type": "Injector",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "elRef",
+                        "type": "ElementRef",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "renderer",
+                        "type": "Renderer2",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "BounceClickDirective",
+            "id": "directive-BounceClickDirective-c7302dba58cb47f82d5e1986811bea3339d12375036560a9700d20b2ddc8f8169c5f11ca8e3fd5ae5b9839a8fbed7cc4c320790053975f0994ffb4ac167ff8a2",
+            "file": "src/app/directives/animations/bounce-click.directive.ts",
+            "type": "directive",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';\n\n@Directive({\n  selector: '[appBounceClick]',\n  standalone: true,\n})\nexport class BounceClickDirective {\n  private readonly transition = 'transform 0.15s ease';\n\n  constructor(private el: ElementRef, private renderer: Renderer2) {\n    this.renderer.setStyle(this.el.nativeElement, 'transition', this.transition);\n    this.renderer.setStyle(this.el.nativeElement, 'willChange', 'transform');\n  }\n\n  @HostListener('mousedown')\n  onMouseDown(): void {\n    this.renderer.setStyle(this.el.nativeElement, 'transform', 'scale(0.96)');\n  }\n\n  @HostListener('mouseup')\n  @HostListener('mouseleave')\n  onMouseUp(): void {\n    this.renderer.setStyle(this.el.nativeElement, 'transform', 'scale(1)');\n  }\n\n  // Touch support\n  @HostListener('touchstart')\n  onTouchStart(): void {\n    this.renderer.setStyle(this.el.nativeElement, 'transform', 'scale(0.96)');\n  }\n\n  @HostListener('touchend')\n  @HostListener('touchcancel')\n  onTouchEnd(): void {\n    this.renderer.setStyle(this.el.nativeElement, 'transform', 'scale(1)');\n  }\n}\n",
+            "selector": "[appBounceClick]",
+            "providers": [],
+            "hostDirectives": [],
+            "standalone": true,
+            "inputsClass": [],
+            "outputsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [
+                {
+                    "name": "mousedown",
+                    "args": [],
+                    "argsDecorator": [],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16
+                },
+                {
+                    "name": "mouseleave",
+                    "args": [],
+                    "argsDecorator": [],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22
+                },
+                {
+                    "name": "mouseup",
+                    "args": [],
+                    "argsDecorator": [],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22
+                },
+                {
+                    "name": "touchcancel",
+                    "args": [],
+                    "argsDecorator": [],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 34
+                },
+                {
+                    "name": "touchend",
+                    "args": [],
+                    "argsDecorator": [],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 34
+                },
+                {
+                    "name": "touchstart",
+                    "args": [],
+                    "argsDecorator": [],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 28
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "transition",
+                    "defaultValue": "'transform 0.15s ease'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 8,
+                    "modifierKind": [
+                        123,
+                        148
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onMouseDown",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 16,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'mousedown'"
+                        }
+                    ],
+                    "modifierKind": [
+                        170
+                    ]
+                },
+                {
+                    "name": "onMouseUp",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 22,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'mouseup'"
+                        },
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'mouseleave'"
+                        }
+                    ],
+                    "modifierKind": [
+                        170,
+                        170
+                    ]
+                },
+                {
+                    "name": "onTouchEnd",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 34,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'touchend'"
+                        },
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'touchcancel'"
+                        }
+                    ],
+                    "modifierKind": [
+                        170,
+                        170
+                    ]
+                },
+                {
+                    "name": "onTouchStart",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 28,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'touchstart'"
+                        }
+                    ],
+                    "modifierKind": [
+                        170
+                    ]
+                }
+            ],
+            "extends": [],
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "el",
+                        "type": "ElementRef",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "renderer",
+                        "type": "Renderer2",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 8,
+                "jsdoctags": [
+                    {
+                        "name": "el",
+                        "type": "ElementRef",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "renderer",
+                        "type": "Renderer2",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "ButtonDirective",
+            "id": "directive-ButtonDirective-3f42680f1a0de04e32f36ed37ea1cd56a8425dd96b4366d6220d7a9bbff861e2d9374ba46d58b8c3196ca77d0632c492df9c3f0e2800e6f2e43aeabd0b1f9c63",
+            "file": "src/app/directives/functional/button.directive.ts",
+            "type": "directive",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Directive, ElementRef, Input, Renderer2, OnInit, OnDestroy } from '@angular/core';\nimport { ThemeService } from '../../theme/services/theme.service';\nimport { Subscription } from 'rxjs';\n\n@Directive({\n  selector: '[appButton]'  // Apply this directive to any element\n})\nexport class ButtonDirective implements OnInit, OnDestroy {\n  @Input() rounded: boolean = false; // Rounded button\n  @Input() success: boolean = false; // Success button (uses theme)\n  @Input() error: boolean = false;   // Error button (uses theme)\n  @Input() text!: string; // Make button fill full width\n\n  private subscription: Subscription | undefined;\n  private fontSize: string = '14px'; // Default font size (fallback)\n  private fontFamily: string = 'Arial'; // Default font size (fallback)\n\n  constructor(\n    private el: ElementRef,\n    private renderer: Renderer2,\n    private themeService: ThemeService\n  ) {}\n\n  ngOnInit(): void {\n    this.subscription = this.themeService.theme$.subscribe((theme) => {\n      this.fontSize = theme.typography.fontSize || this.fontSize;  // Get font size from theme\n      this.fontSize = theme.typography.fontFamily || this.fontFamily;  // Get font size from theme\n      this.applyStyles(theme);\n    });\n\n    // Apply styles when theme is first available\n    const initialTheme = this.themeService.getTheme();\n    this.fontSize = initialTheme.typography.fontSize || this.fontSize;\n    this.applyStyles(initialTheme);\n  }\n\n  ngOnDestroy(): void {\n    if (this.subscription) {\n      this.subscription.unsubscribe();\n    }\n  }\n\n  private applyStyles(theme: any): void {\n    // Reset styles\n    this.renderer.setStyle(this.el.nativeElement, 'display', 'inline-flex');\n    this.renderer.setStyle(this.el.nativeElement, 'justify-content', 'center');\n    this.renderer.setStyle(this.el.nativeElement, 'align-items', 'center');\n    this.renderer.setStyle(this.el.nativeElement, 'cursor', 'pointer');\n    this.renderer.setStyle(this.el.nativeElement, 'border', 'none');\n    this.renderer.setStyle(this.el.nativeElement, 'outline', 'none');\n    this.renderer.setStyle(this.el.nativeElement, 'text-align', 'center');\n    this.renderer.setStyle(this.el.nativeElement, 'transition', 'all 0.3s ease');\n    this.renderer.setStyle(this.el.nativeElement, 'width', '100%');\n\n    // Apply size based on font size (calculated dynamically)\n    this.renderer.setStyle(this.el.nativeElement, 'font-size', this.fontSize);\n    this.renderer.setStyle(this.el.nativeElement, 'font-family', this.fontFamily);\n\n    // Apply padding based on theme\n    const padding = theme.spacing?.md || '0.75rem 1.5rem';  // Use theme spacing\n    this.renderer.setStyle(this.el.nativeElement, 'padding', padding);\n\n    // Apply the shape (rounded or not)\n    if (this.rounded) {\n      this.renderer.setStyle(this.el.nativeElement, 'border-radius', '8px');\n    }\n\n    // Apply theme-based colors (background and text)\n    if (this.success) {\n      this.renderer.setStyle(this.el.nativeElement, 'background-color', theme.successBackground || '#4caf50');\n      this.renderer.setStyle(this.el.nativeElement, 'color', theme.successText || 'white');\n    } else if (this.error) {\n      this.renderer.setStyle(this.el.nativeElement, 'background-color', theme.errorBackground || '#f44336');\n      this.renderer.setStyle(this.el.nativeElement, 'color', theme.errorText || 'white');\n    } else {\n      this.renderer.setStyle(this.el.nativeElement, 'background-color', theme.primaryBackground || '#007bff');\n      this.renderer.setStyle(this.el.nativeElement, 'color', theme.primaryText || 'white');\n    }\n  }\n}\n",
+            "selector": "[appButton]",
+            "providers": [],
+            "hostDirectives": [],
+            "standalone": false,
+            "inputsClass": [
+                {
+                    "name": "error",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "rounded",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "success",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "text",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "propertiesClass": [
+                {
+                    "name": "fontFamily",
+                    "defaultValue": "'Arial'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "fontSize",
+                    "defaultValue": "'14px'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
                     "name": "subscription",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -705,7 +1583,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 10,
+                    "line": 14,
                     "modifierKind": [
                         123
                     ]
@@ -716,12 +1594,6 @@
                     "name": "applyStyles",
                     "args": [
                         {
-                            "name": "tokens",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        },
-                        {
                             "name": "theme",
                             "type": "any",
                             "deprecated": false,
@@ -731,23 +1603,13 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 33,
+                    "line": 43,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        124,
-                        128
+                        123
                     ],
                     "jsdoctags": [
-                        {
-                            "name": "tokens",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        },
                         {
                             "name": "theme",
                             "type": "any",
@@ -765,7 +1627,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 26,
+                    "line": 37,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -775,7 +1637,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 19,
+                    "line": 24,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -808,18 +1670,9 @@
                         "type": "ThemeService",
                         "deprecated": false,
                         "deprecationMessage": ""
-                    },
-                    {
-                        "name": "styleService",
-                        "type": "StyleService",
-                        "deprecated": false,
-                        "deprecationMessage": ""
                     }
                 ],
-                "line": 10,
-                "modifierKind": [
-                    124
-                ],
+                "line": 16,
                 "jsdoctags": [
                     {
                         "name": "el",
@@ -847,27 +1700,18 @@
                         "tagName": {
                             "text": "param"
                         }
-                    },
-                    {
-                        "name": "styleService",
-                        "type": "StyleService",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
                     }
                 ]
             }
         },
         {
             "name": "CanvasDirective",
-            "id": "directive-CanvasDirective-2c41cbf4bdd0daa32ae05f745501cb5e5496486e62005f90425103f94e1268544fe348a006e04df85659b368ea24b566d5b2b8e9af8f3bd32672f82d4a80ab03",
+            "id": "directive-CanvasDirective-9e9eec9188b79f04a0107a9b91cca38ed7ae9964f906542507f504631ea2555775ae4eca73502d1a3a15829a2226d64595cb826fad9badc58c4facba840cc878",
             "file": "src/app/directives/structural/canvas.directive.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import {Directive, ElementRef, Renderer2} from '@angular/core';\nimport {ThemeService} from '../../theme/services/theme.service';\nimport {BaseDirective} from '../base.directive';\nimport {StyleService} from '../../theme/services/style.service';\n\n@Directive({\n  selector: '[appCanvas]'\n})\nexport class CanvasDirective extends BaseDirective {\n\n  constructor(\n    el: ElementRef,\n    renderer: Renderer2,\n    themeService: ThemeService,\n    styleService: StyleService,)\n  {\n    super(el, renderer, themeService, styleService);\n  }\n\n  protected override applyStyles(tokens: any, theme: any) {\n    this.renderer.setStyle(this.el.nativeElement, 'display', 'flex');\n    this.renderer.setStyle(this.el.nativeElement, 'flexDirection', 'column');\n    this.renderer.setStyle(this.el.nativeElement, 'width', '100vw');\n    this.renderer.setStyle(this.el.nativeElement, 'overflowX', 'hidden');\n    this.renderer.setStyle(this.el.nativeElement, 'padding', tokens.spacing.md);\n    this.renderer.setStyle(this.el.nativeElement, 'background', theme.background);\n    this.renderer.setStyle(this.el.nativeElement, 'color', theme.text);\n    this.renderer.setStyle(this.el.nativeElement, 'gap', tokens.spacing.lg);\n    this.renderer.setStyle(this.el.nativeElement, 'alignItems', 'center');\n    this.renderer.setStyle(this.el.nativeElement, 'boxSizing', 'border-box');\n    this.renderer.setStyle(this.el.nativeElement, 'maxWidth', '100%');\n  }\n}\n",
+            "sourceCode": "import {Directive} from '@angular/core';\nimport {BaseDirective} from '../base.directive';\nimport {Theme} from '../../theme/interfaces/theme.interface';\n\n@Directive({\n  selector: '[appCanvas]'\n})\nexport class CanvasDirective extends BaseDirective {\n\n  applyStyles(theme: Theme) {\n    console.log(theme)\n    this.styles\n      .makeItFlex('column', false)\n      .makeItFullWidth()\n      .makeItOverflowXHidden()\n      .makeItPadded()\n\n    this.renderer.setStyle(this.element, 'background', theme.colors.background);\n    this.renderer.setStyle(this.element, 'color', theme.colors.text);\n    this.renderer.setStyle(this.element, 'gap', theme.spacing.lg);\n    this.renderer.setStyle(this.element, 'alignItems', 'center');\n  }\n\n}\n",
             "selector": "[appCanvas]",
             "providers": [],
             "hostDirectives": [],
@@ -880,16 +1724,83 @@
             "hostListeners": [],
             "propertiesClass": [
                 {
-                    "name": "subscription",
+                    "name": "element",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Subscription | undefined",
+                    "type": "HTMLElement",
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 10,
+                    "line": 16,
+                    "modifierKind": [
+                        124,
+                        148
+                    ],
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                },
+                {
+                    "name": "renderer",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Renderer2",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "modifierKind": [
+                        124,
+                        148
+                    ],
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                },
+                {
+                    "name": "styles",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StyleBuilder",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        124
+                    ],
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                },
+                {
+                    "name": "subscription",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Subscription",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 11,
                     "modifierKind": [
                         123
+                    ],
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                },
+                {
+                    "name": "themeService",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ThemeService",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "modifierKind": [
+                        124,
+                        148
                     ],
                     "inheritance": {
                         "file": "BaseDirective"
@@ -901,14 +1812,8 @@
                     "name": "applyStyles",
                     "args": [
                         {
-                            "name": "tokens",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        },
-                        {
                             "name": "theme",
-                            "type": "any",
+                            "type": "Theme",
                             "deprecated": false,
                             "deprecationMessage": ""
                         }
@@ -916,26 +1821,13 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 20,
+                    "line": 10,
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "modifierKind": [
-                        124,
-                        164
-                    ],
                     "jsdoctags": [
                         {
-                            "name": "tokens",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        },
-                        {
                             "name": "theme",
-                            "type": "any",
+                            "type": "Theme",
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
@@ -953,7 +1845,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 26,
+                    "line": 33,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "inheritance": {
@@ -966,7 +1858,406 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 19,
+                    "line": 27,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                }
+            ],
+            "extends": [
+                "BaseDirective"
+            ]
+        },
+        {
+            "name": "CardDirective",
+            "id": "directive-CardDirective-30ac75ec6796dce35ff6e6ed2b0070f87439400e51c4343b5b4fdf45089bf15b534e3af989ceaa35f3b2dd9145c09eea95c0d255b53d96d2c485f7b0f021f2fb",
+            "file": "src/app/directives/functional/card.directive.ts",
+            "type": "directive",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Directive } from '@angular/core';\nimport { BaseDirective } from '../base.directive';\nimport {Theme} from '../../theme/interfaces/theme.interface';\n\n@Directive({\n  selector: '[appCard]',\n  standalone: true,\n})\nexport class CardDirective extends BaseDirective {\n\n  applyStyles(theme: Theme): void {\n    this.styles\n      .makeItFullWidth()\n      .makeItOutlined()\n      .makeItPadded()\n      .makeItRounded()\n      .makeItShadowed();\n  }\n}\n",
+            "selector": "[appCard]",
+            "providers": [],
+            "hostDirectives": [],
+            "standalone": true,
+            "inputsClass": [],
+            "outputsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "propertiesClass": [
+                {
+                    "name": "element",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "HTMLElement",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "modifierKind": [
+                        124,
+                        148
+                    ],
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                },
+                {
+                    "name": "renderer",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Renderer2",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "modifierKind": [
+                        124,
+                        148
+                    ],
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                },
+                {
+                    "name": "styles",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StyleBuilder",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        124
+                    ],
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                },
+                {
+                    "name": "subscription",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Subscription",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 11,
+                    "modifierKind": [
+                        123
+                    ],
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                },
+                {
+                    "name": "themeService",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ThemeService",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "modifierKind": [
+                        124,
+                        148
+                    ],
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "applyStyles",
+                    "args": [
+                        {
+                            "name": "theme",
+                            "type": "Theme",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "theme",
+                            "type": "Theme",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ],
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                },
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 33,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 27,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                }
+            ],
+            "extends": [
+                "BaseDirective"
+            ]
+        },
+        {
+            "name": "FlexDirective",
+            "id": "directive-FlexDirective-bf459c2e9048cabd6f3d121e046a451d09237870d83df68be0f19fa85513f6aed9cb66ea93cb2582f2aca29030507bf0d2359f73d910dc8163b322a5f73ed61b",
+            "file": "src/app/directives/structural/flex.directive.ts",
+            "type": "directive",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import {Directive, Input, OnChanges, SimpleChanges} from '@angular/core';\nimport {BaseDirective} from '../base.directive';\nimport {Theme} from '../../theme/interfaces/theme.interface';\n\n@Directive({\n  selector: '[appFlex]'\n})\nexport class FlexDirective extends BaseDirective implements OnChanges {\n\n  @Input() direction: 'row' | 'column' = 'row';\n  @Input() wrap: 'wrap' | 'no-wrap' = 'no-wrap';\n  @Input() justify: 'space-between' | 'start' | 'end' | 'space-evenly' = 'space-between';\n  @Input() align: 'center' | 'start' | 'end'  = 'center';\n\n  applyStyles(theme?: Theme) {\n\n    console.log(this.direction)\n\n    this.renderer.setStyle(this.element, 'display', 'flex');\n    this.renderer.setStyle(this.element, 'flexFlow', this.direction + this.wrap);\n    this.renderer.setStyle(this.element, 'justifyContent', this.justify);\n    this.renderer.setStyle(this.element, 'alignItems', this.align);\n    this.renderer.setStyle(this.element, 'width', '100%');\n    this.renderer.setStyle(this.element, 'height', '100%');\n  }\n\n  ngOnChanges(changes: SimpleChanges) {\n    console.log(changes);\n    this.applyStyles()\n  }\n}\n",
+            "selector": "[appFlex]",
+            "providers": [],
+            "hostDirectives": [],
+            "standalone": false,
+            "inputsClass": [
+                {
+                    "name": "align",
+                    "defaultValue": "'center'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "\"center\" | \"start\" | \"end\"",
+                    "decorators": []
+                },
+                {
+                    "name": "direction",
+                    "defaultValue": "'row'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "\"row\" | \"column\"",
+                    "decorators": []
+                },
+                {
+                    "name": "justify",
+                    "defaultValue": "'space-between'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "\"space-between\" | \"start\" | \"end\" | \"space-evenly\"",
+                    "decorators": []
+                },
+                {
+                    "name": "wrap",
+                    "defaultValue": "'no-wrap'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "\"wrap\" | \"no-wrap\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "propertiesClass": [
+                {
+                    "name": "element",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "HTMLElement",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "modifierKind": [
+                        124,
+                        148
+                    ],
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                },
+                {
+                    "name": "renderer",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Renderer2",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "modifierKind": [
+                        124,
+                        148
+                    ],
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                },
+                {
+                    "name": "styles",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StyleBuilder",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        124
+                    ],
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                },
+                {
+                    "name": "subscription",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Subscription",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 11,
+                    "modifierKind": [
+                        123
+                    ],
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                },
+                {
+                    "name": "themeService",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ThemeService",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "modifierKind": [
+                        124,
+                        148
+                    ],
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "applyStyles",
+                    "args": [
+                        {
+                            "name": "theme",
+                            "type": "Theme",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "optional": true
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "theme",
+                            "type": "Theme",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "optional": true,
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ],
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                },
+                {
+                    "name": "ngOnChanges",
+                    "args": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 27,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 33,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 27,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "inheritance": {
@@ -977,6 +2268,483 @@
             "extends": [
                 "BaseDirective"
             ],
+            "implements": [
+                "OnChanges"
+            ]
+        },
+        {
+            "name": "GridDirective",
+            "id": "directive-GridDirective-97a84f471084a86128c180fadf60cfac615237a3061e2e82ca5c450b393cba2097133958fd0cb277d62e6f8dbe823fb44f51104345d490dd7848824b903601ef",
+            "file": "src/app/directives/structural/grid.directive.ts",
+            "type": "directive",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import {Directive, Input, OnChanges} from '@angular/core';\nimport {BaseDirective} from '../base.directive';\nimport {Theme} from '../../theme/interfaces/theme.interface';\n\n@Directive({\n  selector: '[appGrid]'\n})\nexport class GridDirective extends BaseDirective implements OnChanges {\n  @Input() columns: string[] = [];\n\n  applyStyles(theme: Theme): void {\n    this.styles\n      .makeItFullHeight()\n      .makeItFullWidth()\n      .makeItGrid();\n  }\n\n  //TODO: ez enm így kell\n  ngOnChanges() {\n\n    this.renderer.setStyle(this.element, 'gridTemplateColumns', this.columns.join(' '));\n\n    // Apply outline to each direct child\n    Array.from(this.element.children).forEach((child: any) => {\n      this.renderer.setStyle(child, 'outline', '1px solid red');\n    });\n  }\n}\n",
+            "selector": "[appGrid]",
+            "providers": [],
+            "hostDirectives": [],
+            "standalone": false,
+            "inputsClass": [
+                {
+                    "name": "columns",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "propertiesClass": [
+                {
+                    "name": "element",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "HTMLElement",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "modifierKind": [
+                        124,
+                        148
+                    ],
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                },
+                {
+                    "name": "renderer",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Renderer2",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "modifierKind": [
+                        124,
+                        148
+                    ],
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                },
+                {
+                    "name": "styles",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StyleBuilder",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        124
+                    ],
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                },
+                {
+                    "name": "subscription",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Subscription",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 11,
+                    "modifierKind": [
+                        123
+                    ],
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                },
+                {
+                    "name": "themeService",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ThemeService",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "modifierKind": [
+                        124,
+                        148
+                    ],
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "applyStyles",
+                    "args": [
+                        {
+                            "name": "theme",
+                            "type": "Theme",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 11,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "theme",
+                            "type": "Theme",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ],
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                },
+                {
+                    "name": "ngOnChanges",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 33,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 27,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                }
+            ],
+            "extends": [
+                "BaseDirective"
+            ],
+            "implements": [
+                "OnChanges"
+            ]
+        },
+        {
+            "name": "HeaderDirective",
+            "id": "directive-HeaderDirective-d333ec126d7019acfdd0fd717c37c34b948f2a7d6088a3bca0fdbbce0166747a70d0c69b1f1af3a90206da31d899a511c6f37c9b29af6458569fb628e1d92aa7",
+            "file": "src/app/directives/structural/header.directive.ts",
+            "type": "directive",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Directive, ElementRef, Input, Renderer2, OnChanges, SimpleChanges } from '@angular/core';\nimport { ThemeService } from '../../theme/services/theme.service';\nimport {BaseDirective} from '../base.directive';\nimport {StyleService} from '../../theme/services/style.service';\nimport {Theme} from '../../theme/interfaces/theme.interface';\n\n@Directive({\n  selector: '[appHeader]',\n})\nexport class HeaderDirective extends BaseDirective {\n  @Input() sticky: boolean = false;\n\n  applyStyles(theme: Theme): void {\n    const element = this.element;\n\n    this.renderer.setStyle(element, 'padding', theme.spacing.md);\n    this.renderer.setStyle(element, 'background', 'red');\n    this.renderer.setStyle(element, 'color', theme.colors.text);\n    this.renderer.setStyle(element, 'boxSizing', 'border-box');\n    this.renderer.setStyle(element, 'width', '100%');\n    this.renderer.setStyle(element, 'zIndex', '1000');\n\n    if (this.sticky) {\n      this.renderer.setStyle(element, 'position', 'sticky');\n      this.renderer.setStyle(element, 'top', '0');\n    } else {\n      this.renderer.removeStyle(element, 'position');\n      this.renderer.removeStyle(element, 'top');\n    }\n  }\n}\n",
+            "selector": "[appHeader]",
+            "providers": [],
+            "hostDirectives": [],
+            "standalone": false,
+            "inputsClass": [
+                {
+                    "name": "sticky",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "propertiesClass": [
+                {
+                    "name": "element",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "HTMLElement",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "modifierKind": [
+                        124,
+                        148
+                    ],
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                },
+                {
+                    "name": "renderer",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Renderer2",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "modifierKind": [
+                        124,
+                        148
+                    ],
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                },
+                {
+                    "name": "styles",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StyleBuilder",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        124
+                    ],
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                },
+                {
+                    "name": "subscription",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Subscription",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 11,
+                    "modifierKind": [
+                        123
+                    ],
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                },
+                {
+                    "name": "themeService",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ThemeService",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "modifierKind": [
+                        124,
+                        148
+                    ],
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "applyStyles",
+                    "args": [
+                        {
+                            "name": "theme",
+                            "type": "Theme",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "theme",
+                            "type": "Theme",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ],
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                },
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 33,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 27,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                }
+            ],
+            "extends": [
+                "BaseDirective"
+            ]
+        },
+        {
+            "name": "HoverGrowDirective",
+            "id": "directive-HoverGrowDirective-fb1386020cd49f4971af74cafa6f080a390215523300b2bd459ae4875d7f627a6a174b152bc8aa5a8c68c4057f5e367f486ddd966a4ee6be4f329106de852fdc",
+            "file": "src/app/directives/animations/hover-grow.directive.ts",
+            "type": "directive",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';\n\n@Directive({\n  selector: '[appHoverGrow]',\n  standalone: true,\n})\nexport class HoverGrowDirective {\n  private readonly scaleAmount = 1.05;\n  private readonly transition = 'transform 0.3s ease-in-out';\n\n  constructor(private el: ElementRef, private renderer: Renderer2) {\n    this.renderer.setStyle(this.el.nativeElement, 'transition', this.transition);\n    this.renderer.setStyle(this.el.nativeElement, 'display', 'inline-block'); // Ensures transform works\n  }\n\n  @HostListener('mouseenter')\n  onMouseEnter(): void {\n    this.renderer.setStyle(this.el.nativeElement, 'transform', `scale(${this.scaleAmount})`);\n  }\n\n  @HostListener('mouseleave')\n  onMouseLeave(): void {\n    this.renderer.setStyle(this.el.nativeElement, 'transform', 'scale(1)');\n  }\n}\n",
+            "selector": "[appHoverGrow]",
+            "providers": [],
+            "hostDirectives": [],
+            "standalone": true,
+            "inputsClass": [],
+            "outputsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [
+                {
+                    "name": "mouseenter",
+                    "args": [],
+                    "argsDecorator": [],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17
+                },
+                {
+                    "name": "mouseleave",
+                    "args": [],
+                    "argsDecorator": [],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "scaleAmount",
+                    "defaultValue": "1.05",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 8,
+                    "modifierKind": [
+                        123,
+                        148
+                    ]
+                },
+                {
+                    "name": "transition",
+                    "defaultValue": "'transform 0.3s ease-in-out'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 9,
+                    "modifierKind": [
+                        123,
+                        148
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onMouseEnter",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'mouseenter'"
+                        }
+                    ],
+                    "modifierKind": [
+                        170
+                    ]
+                },
+                {
+                    "name": "onMouseLeave",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 22,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'mouseleave'"
+                        }
+                    ],
+                    "modifierKind": [
+                        170
+                    ]
+                }
+            ],
+            "extends": [],
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -992,18 +2760,6 @@
                     {
                         "name": "renderer",
                         "type": "Renderer2",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "themeService",
-                        "type": "ThemeService",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "styleService",
-                        "type": "StyleService",
                         "deprecated": false,
                         "deprecationMessage": ""
                     }
@@ -1027,695 +2783,18 @@
                         "tagName": {
                             "text": "param"
                         }
-                    },
-                    {
-                        "name": "themeService",
-                        "type": "ThemeService",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    },
-                    {
-                        "name": "styleService",
-                        "type": "StyleService",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "name": "FlexDirective",
-            "id": "directive-FlexDirective-db5177c4ccf3a8fdd3bcafd19e0547d9bd771fd30fced50836efc1965f5ea890d4c8182267dcc4caefea789319cee8d95f1c26e0ada14e34ce37b43e2d563f6d",
-            "file": "src/app/directives/structural/flex.directive.ts",
-            "type": "directive",
-            "description": "",
-            "rawdescription": "\n",
-            "sourceCode": "import {Directive, ElementRef, Input, OnChanges, Renderer2} from '@angular/core';\nimport {BaseDirective} from '../base.directive';\nimport {ThemeService} from '../../theme/services/theme.service';\nimport {StyleService} from '../../theme/services/style.service';\n\n@Directive({\n  selector: '[appFlex]'\n})\nexport class FlexDirective extends BaseDirective {\n\n  @Input() direction: 'row' | 'column' = 'row';\n  @Input() wrap: ' wrap' | '' = '';\n  @Input() align: string = 'space-between center';\n\n  constructor(\n    el: ElementRef,\n    renderer: Renderer2,\n    themeService: ThemeService,\n    styleService: StyleService\n  ) {\n    super(el, renderer, themeService, styleService);\n  }\n\n  protected override applyStyles(tokens: any, theme: any) {\n    const [justifyContent, alignItems] = this.align.split(' ');\n\n    this.renderer.setStyle(this.el.nativeElement, 'display', 'flex');\n    this.renderer.setStyle(this.el.nativeElement, 'flexFlow', this.direction + this.wrap);\n    this.renderer.setStyle(this.el.nativeElement, 'justifyContent', justifyContent);\n    this.renderer.setStyle(this.el.nativeElement, 'alignItems', alignItems);\n    this.renderer.setStyle(this.el.nativeElement, 'width', '100%');\n    this.renderer.setStyle(this.el.nativeElement, 'height', '100%');\n  }\n}\n",
-            "selector": "[appFlex]",
-            "providers": [],
-            "hostDirectives": [],
-            "standalone": false,
-            "inputsClass": [
-                {
-                    "name": "align",
-                    "defaultValue": "'space-between center'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 13,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "direction",
-                    "defaultValue": "'row'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 11,
-                    "type": "\"row\" | \"column\"",
-                    "decorators": []
-                },
-                {
-                    "name": "wrap",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 12,
-                    "type": "\" wrap\" | string",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "propertiesClass": [
-                {
-                    "name": "subscription",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Subscription | undefined",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 10,
-                    "modifierKind": [
-                        123
-                    ],
-                    "inheritance": {
-                        "file": "BaseDirective"
-                    }
-                }
-            ],
-            "methodsClass": [
-                {
-                    "name": "applyStyles",
-                    "args": [
-                        {
-                            "name": "tokens",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        },
-                        {
-                            "name": "theme",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 24,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        124,
-                        164
-                    ],
-                    "jsdoctags": [
-                        {
-                            "name": "tokens",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        },
-                        {
-                            "name": "theme",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ],
-                    "inheritance": {
-                        "file": "BaseDirective"
-                    }
-                },
-                {
-                    "name": "ngOnDestroy",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 26,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "inheritance": {
-                        "file": "BaseDirective"
-                    }
-                },
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 19,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "inheritance": {
-                        "file": "BaseDirective"
-                    }
-                }
-            ],
-            "extends": [
-                "BaseDirective"
-            ],
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [
-                    {
-                        "name": "el",
-                        "type": "ElementRef",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "renderer",
-                        "type": "Renderer2",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "themeService",
-                        "type": "ThemeService",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "styleService",
-                        "type": "StyleService",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "line": 13,
-                "jsdoctags": [
-                    {
-                        "name": "el",
-                        "type": "ElementRef",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    },
-                    {
-                        "name": "renderer",
-                        "type": "Renderer2",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    },
-                    {
-                        "name": "themeService",
-                        "type": "ThemeService",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    },
-                    {
-                        "name": "styleService",
-                        "type": "StyleService",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "name": "GridDirective",
-            "id": "directive-GridDirective-9833e165fb90a36308786f45b5e162e7e8fcc0d3aeffde87425f86cc034e4ef58cc514a39768e4a8c21099f67e38c166063af90434d320b60eb278402eeedf5d",
-            "file": "src/app/directives/structural/grid.directive.ts",
-            "type": "directive",
-            "description": "",
-            "rawdescription": "\n",
-            "sourceCode": "import {Directive, ElementRef, Input, OnChanges, Renderer2} from '@angular/core';\nimport {ThemeService} from '../../theme/services/theme.service';\nimport {StyleService} from '../../theme/services/style.service';\nimport {BaseDirective} from '../base.directive';\n\n@Directive({\n  selector: '[appGrid]'\n})\nexport class GridDirective extends BaseDirective implements OnChanges {\n  @Input() columns: string[] = [];\n\n  constructor(\n    el: ElementRef,\n    renderer: Renderer2,\n    themeService: ThemeService,\n    styleService: StyleService\n  ) {\n    super(el, renderer, themeService, styleService);\n  }\n\n  protected override applyStyles(tokens: any, theme: any) {\n    this.renderer.setStyle(this.el.nativeElement, 'display', 'grid');\n    this.renderer.setStyle(this.el.nativeElement, 'gridGap', '8px');\n    this.renderer.setStyle(this.el.nativeElement, 'width', '100%');\n    this.renderer.setStyle(this.el.nativeElement, 'height', '100%');\n  }\n\n  ngOnChanges() {\n    const el = this.el.nativeElement;\n\n    this.renderer.setStyle(el, 'gridTemplateColumns', this.columns.join(' '));\n\n    // Apply outline to each direct child\n    Array.from(el.children).forEach((child: any) => {\n      this.renderer.setStyle(child, 'outline', '1px solid red');\n    });\n  }\n}\n",
-            "selector": "[appGrid]",
-            "providers": [],
-            "hostDirectives": [],
-            "standalone": false,
-            "inputsClass": [
-                {
-                    "name": "columns",
-                    "defaultValue": "[]",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 10,
-                    "type": "string[]",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "propertiesClass": [
-                {
-                    "name": "subscription",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Subscription | undefined",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 10,
-                    "modifierKind": [
-                        123
-                    ],
-                    "inheritance": {
-                        "file": "BaseDirective"
-                    }
-                }
-            ],
-            "methodsClass": [
-                {
-                    "name": "applyStyles",
-                    "args": [
-                        {
-                            "name": "tokens",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        },
-                        {
-                            "name": "theme",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 21,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        124,
-                        164
-                    ],
-                    "jsdoctags": [
-                        {
-                            "name": "tokens",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        },
-                        {
-                            "name": "theme",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ],
-                    "inheritance": {
-                        "file": "BaseDirective"
-                    }
-                },
-                {
-                    "name": "ngOnChanges",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 28,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "ngOnDestroy",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 26,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "inheritance": {
-                        "file": "BaseDirective"
-                    }
-                },
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 19,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "inheritance": {
-                        "file": "BaseDirective"
-                    }
-                }
-            ],
-            "extends": [
-                "BaseDirective"
-            ],
-            "implements": [
-                "OnChanges"
-            ],
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [
-                    {
-                        "name": "el",
-                        "type": "ElementRef",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "renderer",
-                        "type": "Renderer2",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "themeService",
-                        "type": "ThemeService",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "styleService",
-                        "type": "StyleService",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "line": 10,
-                "jsdoctags": [
-                    {
-                        "name": "el",
-                        "type": "ElementRef",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    },
-                    {
-                        "name": "renderer",
-                        "type": "Renderer2",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    },
-                    {
-                        "name": "themeService",
-                        "type": "ThemeService",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    },
-                    {
-                        "name": "styleService",
-                        "type": "StyleService",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "name": "HeaderDirective",
-            "id": "directive-HeaderDirective-2064f16d22e997a3a1a89518a2a857c61068936b2a7e8b2e873efde1747ca9d316f42661756e6b422f00fdd252d35e8b471961acc882034fc99df6f074af09d5",
-            "file": "src/app/directives/structural/header.directive.ts",
-            "type": "directive",
-            "description": "",
-            "rawdescription": "\n",
-            "sourceCode": "import { Directive, ElementRef, Input, Renderer2, OnChanges, SimpleChanges } from '@angular/core';\nimport { ThemeService } from '../../theme/services/theme.service';\nimport {BaseDirective} from '../base.directive';\nimport {StyleService} from '../../theme/services/style.service';\n\n@Directive({\n  selector: '[appHeader]',\n})\nexport class HeaderDirective extends BaseDirective implements OnChanges {\n  @Input() sticky: boolean = false;\n\n  constructor(\n    el: ElementRef,\n    renderer: Renderer2,\n    themeService: ThemeService,\n    styleService: StyleService\n  ) {\n    super(el, renderer, themeService, styleService);\n  }\n\n  ngOnChanges(changes: SimpleChanges): void {\n    // Re-apply styles on @Input changes like stickiness\n    if (changes['sticky']) {\n      this.applyStyles(this.themeService.getTokens(), this.themeService.getTheme());\n    }\n  }\n\n  protected override applyStyles(tokens: any, theme: any): void {\n    const element = this.el.nativeElement;\n\n    this.renderer.setStyle(element, 'padding', tokens.spacing.md);\n    this.renderer.setStyle(element, 'background', 'red');\n    this.renderer.setStyle(element, 'color', theme.text);\n    this.renderer.setStyle(element, 'boxSizing', 'border-box');\n    this.renderer.setStyle(element, 'width', '100%');\n    this.renderer.setStyle(element, 'zIndex', '1000');\n\n    if (this.sticky) {\n      this.renderer.setStyle(element, 'position', 'sticky');\n      this.renderer.setStyle(element, 'top', '0');\n    } else {\n      this.renderer.removeStyle(element, 'position');\n      this.renderer.removeStyle(element, 'top');\n    }\n  }\n}\n",
-            "selector": "[appHeader]",
-            "providers": [],
-            "hostDirectives": [],
-            "standalone": false,
-            "inputsClass": [
-                {
-                    "name": "sticky",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 11,
-                    "type": "boolean",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "propertiesClass": [
-                {
-                    "name": "subscription",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Subscription | undefined",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 10,
-                    "modifierKind": [
-                        123
-                    ],
-                    "inheritance": {
-                        "file": "BaseDirective"
-                    }
-                }
-            ],
-            "methodsClass": [
-                {
-                    "name": "applyStyles",
-                    "args": [
-                        {
-                            "name": "tokens",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        },
-                        {
-                            "name": "theme",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 29,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        124,
-                        164
-                    ],
-                    "jsdoctags": [
-                        {
-                            "name": "tokens",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        },
-                        {
-                            "name": "theme",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ],
-                    "inheritance": {
-                        "file": "BaseDirective"
-                    }
-                },
-                {
-                    "name": "ngOnChanges",
-                    "args": [
-                        {
-                            "name": "changes",
-                            "type": "SimpleChanges",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 22,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "name": "changes",
-                            "type": "SimpleChanges",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "ngOnDestroy",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 26,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "inheritance": {
-                        "file": "BaseDirective"
-                    }
-                },
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 19,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "inheritance": {
-                        "file": "BaseDirective"
-                    }
-                }
-            ],
-            "extends": [
-                "BaseDirective"
-            ],
-            "implements": [
-                "OnChanges"
-            ],
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [
-                    {
-                        "name": "el",
-                        "type": "ElementRef",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "renderer",
-                        "type": "Renderer2",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "themeService",
-                        "type": "ThemeService",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "styleService",
-                        "type": "StyleService",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "line": 11,
-                "jsdoctags": [
-                    {
-                        "name": "el",
-                        "type": "ElementRef",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    },
-                    {
-                        "name": "renderer",
-                        "type": "Renderer2",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    },
-                    {
-                        "name": "themeService",
-                        "type": "ThemeService",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    },
-                    {
-                        "name": "styleService",
-                        "type": "StyleService",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
                     }
                 ]
             }
         },
         {
             "name": "SectionDirective",
-            "id": "directive-SectionDirective-7bc971a986ecb35892ebc56bc9ecdec3afb6b27f630f0135d8c9c0fea88a5a185111a32317e4b872a68028e34f157e7ef5ca499fc4f0e09ae55c2a3e32d89932",
+            "id": "directive-SectionDirective-41db9cbead3819330a0634673a48f4ff46bdc091928e95e10a1b604756a27541745a044b599a69401c5d1fccaf2a0dc04b5efa35310bad654867b2e7783ca387",
             "file": "src/app/directives/structural/section.directive.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Directive, ElementRef, Renderer2 } from '@angular/core';\nimport { ThemeService } from '../../theme/services/theme.service';\nimport {BaseDirective} from '../base.directive';\nimport {StyleService} from '../../theme/services/style.service';\n\n@Directive({\n  selector: '[appSection]',\n})\nexport class SectionDirective extends BaseDirective {\n  constructor(\n    el: ElementRef,\n    renderer: Renderer2,\n    themeService: ThemeService,\n    styleService: StyleService\n  ) {\n    super(el, renderer, themeService, styleService);\n  }\n\n  protected override applyStyles(tokens: any, theme: any): void {\n    const element = this.el.nativeElement;\n\n    this.renderer.setStyle(element, 'height', '100vh');\n    this.renderer.setStyle(element, 'overflow', 'hidden');\n    this.renderer.setStyle(element, 'padding', tokens.spacing.md);\n    this.renderer.setStyle(element, 'background', 'pink');\n    this.renderer.setStyle(element, 'color', theme.text);\n    this.renderer.setStyle(element, 'boxSizing', 'border-box');\n    this.renderer.setStyle(element, 'width', '100%');\n    this.renderer.setStyle(element, 'display', 'flex');\n    this.renderer.setStyle(element, 'flexDirection', 'column');\n  }\n}\n",
+            "sourceCode": "import { Directive, ElementRef, Renderer2 } from '@angular/core';\nimport { ThemeService } from '../../theme/services/theme.service';\nimport {BaseDirective} from '../base.directive';\nimport {StyleService} from '../../theme/services/style.service';\nimport {Theme} from '../../theme/interfaces/theme.interface';\n\n@Directive({\n  selector: '[appSection]',\n})\nexport class SectionDirective extends BaseDirective {\n\n  applyStyles(theme: Theme): void {\n    const element = this.element;\n\n    this.renderer.setStyle(element, 'height', '100vh');\n    this.renderer.setStyle(element, 'overflow', 'hidden');\n    this.renderer.setStyle(element, 'padding', theme.spacing.md);\n    this.renderer.setStyle(element, 'background', 'pink');\n    this.renderer.setStyle(element, 'color', theme.colors.text);\n    this.renderer.setStyle(element, 'boxSizing', 'border-box');\n    this.renderer.setStyle(element, 'width', '100%');\n    this.renderer.setStyle(element, 'display', 'flex');\n    this.renderer.setStyle(element, 'flexDirection', 'column');\n  }\n}\n",
             "selector": "[appSection]",
             "providers": [],
             "hostDirectives": [],
@@ -1728,16 +2807,83 @@
             "hostListeners": [],
             "propertiesClass": [
                 {
-                    "name": "subscription",
+                    "name": "element",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Subscription | undefined",
+                    "type": "HTMLElement",
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 10,
+                    "line": 16,
+                    "modifierKind": [
+                        124,
+                        148
+                    ],
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                },
+                {
+                    "name": "renderer",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Renderer2",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "modifierKind": [
+                        124,
+                        148
+                    ],
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                },
+                {
+                    "name": "styles",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StyleBuilder",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        124
+                    ],
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                },
+                {
+                    "name": "subscription",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Subscription",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 11,
                     "modifierKind": [
                         123
+                    ],
+                    "inheritance": {
+                        "file": "BaseDirective"
+                    }
+                },
+                {
+                    "name": "themeService",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ThemeService",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "modifierKind": [
+                        124,
+                        148
                     ],
                     "inheritance": {
                         "file": "BaseDirective"
@@ -1749,14 +2895,8 @@
                     "name": "applyStyles",
                     "args": [
                         {
-                            "name": "tokens",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        },
-                        {
                             "name": "theme",
-                            "type": "any",
+                            "type": "Theme",
                             "deprecated": false,
                             "deprecationMessage": ""
                         }
@@ -1764,26 +2904,13 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 20,
+                    "line": 13,
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "modifierKind": [
-                        124,
-                        164
-                    ],
                     "jsdoctags": [
                         {
-                            "name": "tokens",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        },
-                        {
                             "name": "theme",
-                            "type": "any",
+                            "type": "Theme",
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
@@ -1801,7 +2928,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 26,
+                    "line": 33,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "inheritance": {
@@ -1814,7 +2941,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 19,
+                    "line": 27,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "inheritance": {
@@ -1824,6 +2951,83 @@
             ],
             "extends": [
                 "BaseDirective"
+            ]
+        },
+        {
+            "name": "SkeletonLoaderDirective",
+            "id": "directive-SkeletonLoaderDirective-2510d889437af8cee4cdc5bcd2fa18798a663b8e8d2376b4726a2cec8798b1b2cc39ac54dd95c5deb639a4a81ed90e585d66543e2f0f157dcafc0f1382ac3ca0",
+            "file": "src/app/directives/animations/skeleton-loader.directive.ts",
+            "type": "directive",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';\n\n@Directive({\n  selector: '[appSkeletonLoader]',\n  standalone: true,\n})\nexport class SkeletonLoaderDirective implements OnInit {\n  @Input() width: string = '100%';\n  @Input() height: string = '1em';\n  @Input() borderRadius: string = '4px';\n\n  constructor(private el: ElementRef, private renderer: Renderer2) {}\n\n  ngOnInit(): void {\n    const element = this.el.nativeElement;\n\n    this.renderer.setStyle(element, 'display', 'inline-block');\n    this.renderer.setStyle(element, 'width', this.width);\n    this.renderer.setStyle(element, 'height', this.height);\n    this.renderer.setStyle(element, 'background', 'linear-gradient(90deg, #eee 25%, #ddd 50%, #eee 75%)');\n    this.renderer.setStyle(element, 'backgroundSize', '200% 100%');\n    this.renderer.setStyle(element, 'borderRadius', this.borderRadius);\n    this.renderer.setStyle(element, 'animation', 'skeleton-loading 1.5s infinite ease-in-out');\n\n    // Add keyframes globally if not present\n    this.appendSkeletonKeyframes();\n  }\n\n  private appendSkeletonKeyframes(): void {\n    const styleId = 'skeleton-keyframes';\n    if (document.getElementById(styleId)) return;\n\n    const style = this.renderer.createElement('style');\n    this.renderer.setAttribute(style, 'id', styleId);\n    style.textContent = `\n      @keyframes skeleton-loading {\n        0% {\n          background-position: 200% 0;\n        }\n        100% {\n          background-position: -200% 0;\n        }\n      }\n    `;\n    this.renderer.appendChild(document.head, style);\n  }\n}\n",
+            "selector": "[appSkeletonLoader]",
+            "providers": [],
+            "hostDirectives": [],
+            "standalone": true,
+            "inputsClass": [
+                {
+                    "name": "borderRadius",
+                    "defaultValue": "'4px'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "height",
+                    "defaultValue": "'1em'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "width",
+                    "defaultValue": "'100%'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 8,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "appendSkeletonKeyframes",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 29,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "extends": [],
+            "implements": [
+                "OnInit"
             ],
             "constructorObj": {
                 "name": "constructor",
@@ -1842,18 +3046,6 @@
                         "type": "Renderer2",
                         "deprecated": false,
                         "deprecationMessage": ""
-                    },
-                    {
-                        "name": "themeService",
-                        "type": "ThemeService",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "styleService",
-                        "type": "StyleService",
-                        "deprecated": false,
-                        "deprecationMessage": ""
                     }
                 ],
                 "line": 10,
@@ -1870,24 +3062,6 @@
                     {
                         "name": "renderer",
                         "type": "Renderer2",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    },
-                    {
-                        "name": "themeService",
-                        "type": "ThemeService",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    },
-                    {
-                        "name": "styleService",
-                        "type": "StyleService",
                         "deprecated": false,
                         "deprecationMessage": "",
                         "tagName": {
@@ -1901,7 +3075,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-d03e191cae2ffb3ba98544a6d8f2512b15aa4f0bcff2b5e9a5ab82e8c523764a75efd182108a0e504d244ad66de9adcf60a3e9072701b147d54efc6ad9721a1c",
+            "id": "component-AppComponent-174d4d0775c82594e2b27130476d1eed052c31199be23682a688738e90b0aec992bcfa9b8facb1b13bbe2ab558a98083a191a7cf6a7050c5f68c7ed9191ab61e",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1928,7 +3102,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 16
+                    "line": 21
                 }
             ],
             "methodsClass": [
@@ -1938,7 +3112,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 24,
+                    "line": 29,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -1948,7 +3122,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 20,
+                    "line": 25,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -1978,12 +3152,28 @@
                 {
                     "name": "HeaderComponent",
                     "type": "component"
+                },
+                {
+                    "name": "BounceClickDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "SkeletonLoaderDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "ButtonComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "CardComponent",
+                    "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport {GridComponent} from './components/grid/grid.component';\nimport {CanvasComponent} from './components/canvas/canvas.component';\nimport {FlexComponent} from './components/flex/flex.component';\nimport {ThemeService} from './theme/services/theme.service';\nimport {SectionComponent} from './components/section/section.component';\nimport {HeaderComponent} from './components/header/header.component';\n\n@Component({\n  selector: 'app-root',\n  imports: [GridComponent, CanvasComponent, FlexComponent, SectionComponent, HeaderComponent],\n  templateUrl: './app.component.html',\n  styleUrl: './app.component.css'\n})\nexport class AppComponent {\n  title = 'framework';\n\n  constructor(private themeService: ThemeService) {}\n\n  switchToLight() {\n    this.themeService.switchToLightTheme();\n  }\n\n  switchToDark() {\n    this.themeService.switchToDarkTheme();\n  }\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport {GridComponent} from './components/grid/grid.component';\nimport {CanvasComponent} from './components/canvas/canvas.component';\nimport {FlexComponent} from './components/flex/flex.component';\nimport {ThemeService} from './theme/services/theme.service';\nimport {SectionComponent} from './components/section/section.component';\nimport {HeaderComponent} from './components/header/header.component';\nimport {HoverGrowDirective} from './directives/animations/hover-grow.directive';\nimport {BounceClickDirective} from './directives/animations/bounce-click.directive';\nimport {SkeletonLoaderDirective} from './directives/animations/skeleton-loader.directive';\nimport {ButtonComponent} from './components/button/button.component';\nimport {CardComponent} from './components/card/card.component';\n\n@Component({\n  selector: 'app-root',\n  imports: [GridComponent, CanvasComponent, FlexComponent, SectionComponent, HeaderComponent, BounceClickDirective, SkeletonLoaderDirective, ButtonComponent, CardComponent],\n  templateUrl: './app.component.html',\n  styleUrl: './app.component.css'\n})\nexport class AppComponent {\n  title = 'framework';\n\n  constructor(private themeService: ThemeService) {}\n\n  switchToLight() {\n    this.themeService.switchToLightTheme();\n  }\n\n  switchToDark() {\n    this.themeService.switchToDarkTheme();\n  }\n}\n",
             "styleUrl": "./app.component.css",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -2001,7 +3191,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 16,
+                "line": 21,
                 "jsdoctags": [
                     {
                         "name": "themeService",
@@ -2015,7 +3205,7 @@
                 ]
             },
             "extends": [],
-            "templateData": "<app-header [sticky]=\"true\">\n  <div>hello</div>\n  <div></div>\n  <div>hello</div>\n  <div></div>\n  <div>hello</div>\n</app-header>\n<app-canvas>\n  <app-grid [columns]=\"['1fr', '3fr', '1fr']\">\n    <div>hello</div>\n    <div>hello</div>\n    <div></div>\n    <div>hello</div>\n    <div></div>\n    <div>hello</div>\n  </app-grid>\n  <app-grid [columns]=\"['80px', '3fr', '1fr']\">\n    <div>hello</div>\n    <div>hello</div>\n    <div></div>\n    <div>hello</div>\n    <div>hello</div>\n    <div></div>\n    <div>hello</div>\n    <div>hello</div>\n    <div>hello</div>\n    <div>hello</div>\n    <div>hello</div>\n    <div>hello</div>\n    <div>hello</div>\n    <div></div>\n    <div>hello</div>\n  </app-grid>\n  <app-flex>\n    <div>flex</div>\n    <div>element</div>\n    <div>element</div>\n    <div>element</div>\n    <div>element</div>\n    <div>element</div>\n    <div>element</div>\n    <div>element</div>\n  </app-flex>\n  <button (click)=\"switchToLight()\">Light Theme</button>\n  <button (click)=\"switchToDark()\">Dark Theme</button>\n</app-canvas>\n<app-section></app-section>\n"
+            "templateData": "<app-header [sticky]=\"true\">\n  <div>hello</div>\n  <div></div>\n  <div>hello</div>\n  <div></div>\n  <div>hello</div>\n</app-header>\n<app-canvas>\n  <app-grid [columns]=\"['1fr', '3fr', '1fr']\">\n    <div>hello</div>\n    <div>hello</div>\n    <div></div>\n    <div>hello</div>\n    <div></div>\n    <div>hello</div>\n  </app-grid>\n  <app-grid [columns]=\"['80px', '3fr', '1fr']\">\n    <div>hello</div>\n    <div>hello</div>\n    <div></div>\n    <div>hello</div>\n    <div>hello</div>\n    <div></div>\n    <div>hello</div>\n    <div>hello</div>\n    <div>hello</div>\n    <div>hello</div>\n    <div>hello</div>\n    <div>hello</div>\n    <app-button\n      [rounded]=\"false\"\n      [text]=\"'Light Theme'\"\n      [success]=\"true\"\n      (click)=\"switchToLight()\">\n    </app-button>\n    <app-card [direction]=\"'column'\">\n      <div>hello</div>\n      <div>hello</div>\n      <div>hello</div>\n    </app-card>\n    <div>hello</div>\n  </app-grid>\n  <app-button\n    [rounded]=\"true\"\n    [text]=\"'Light Theme'\"\n    [success]=\"true\"\n    (click)=\"switchToLight()\">\n  </app-button>\n  <app-button\n    [rounded]=\"true\"\n    [text]=\"'Dark Theme'\"\n    [error]=\"true\"\n    (click)=\"switchToDark()\">\n  </app-button>\n</app-canvas>\n<app-section>\n  <div appSkeletonLoader height=\"120px\" width=\"60%\"></div>\n</app-section>\n<app-card>\n    <div>hello</div>\n    <div>hello</div>\n    <div>hello</div>\n</app-card>\n"
         },
         {
             "name": "ButtonComponent",
@@ -2152,6 +3342,96 @@
             }
         },
         {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-78ebc51a94e7d57271f91afdf2d1c31525b192b38e92013fdd8920ad43424d91e482b878589079fe8121c1907b3ab74d3db19b791e1cbafd214af6a8874b1ebc-1",
+            "file": "src/app/components/button/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-button",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./button.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [
+                {
+                    "name": "ButtonDirective",
+                    "inputs": [
+                        "rounded",
+                        "error",
+                        "success",
+                        "text"
+                    ],
+                    "outputs": []
+                },
+                {
+                    "name": "BounceClickDirective"
+                }
+            ],
+            "inputsClass": [
+                {
+                    "name": "error",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "rounded",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "success",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "text",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from '@angular/core';\nimport {ButtonDirective} from '../../directives/functional/button.directive';\nimport {BounceClickDirective} from '../../directives/animations/bounce-click.directive';\n\n@Component({\n  selector: 'app-button',\n  imports: [],\n  templateUrl: './button.component.html',\n  hostDirectives: [\n    {\n      directive: ButtonDirective,\n      inputs: ['rounded', 'error', 'success', 'text']\n    },\n    BounceClickDirective\n  ]\n})\nexport class ButtonComponent {\n\n  @Input() rounded: boolean = false;  // For rounded or rectangular shapes\n  @Input() success: boolean = false;  // For success state\n  @Input() error: boolean = false;    // For error state\n  @Input() text!: string;\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "isDuplicate": true,
+            "duplicateId": 1,
+            "duplicateName": "ButtonComponent-1",
+            "templateData": "<span>{{text}}</span>\n"
+        },
+        {
             "name": "CanvasComponent",
             "id": "component-CanvasComponent-aa161d6bedccdca0edbc68d279bd0b87daa3f9520c142793202dab8d7a7290149bdd2b7670bc58c9a9a57886f20d7bbbb0a5ee8b9c32715b571d1ad92957c5d6",
             "file": "src/app/components/canvas/canvas.component.ts",
@@ -2190,6 +3470,98 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
+            "templateData": "<ng-content></ng-content>\n"
+        },
+        {
+            "name": "CardComponent",
+            "id": "component-CardComponent-e25f7c05c2e0b65a4a6052ec7c446dac082c21d24ccb4f7062d7f4c8018e9921401d01a035955f06e5e8ca2325f1ce41cabc8e598248f3c38f8fc9a93ecc886a",
+            "file": "src/app/components/card/card.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-card",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./card.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [
+                {
+                    "name": "CardDirective"
+                },
+                {
+                    "name": "FlexDirective",
+                    "inputs": [
+                        "direction"
+                    ],
+                    "outputs": []
+                }
+            ],
+            "inputsClass": [
+                {
+                    "name": "direction",
+                    "defaultValue": "'column'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "\"row\" | \"column\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "flexDirective",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "FlexDirective",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 18,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "undefined"
+                        }
+                    ],
+                    "modifierKind": [
+                        170
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngAfterViewInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {AfterViewInit, Component, forwardRef, Input, ViewChild} from '@angular/core';\nimport {CardDirective} from '../../directives/functional/card.directive';\nimport {FlexDirective} from '../../directives/structural/flex.directive';\n\n@Component({\n  selector: 'app-card',\n  imports: [],\n  templateUrl: './card.component.html',\n  hostDirectives: [\n    CardDirective,\n    {\n      directive: FlexDirective,\n      inputs: ['direction']\n    }]\n})\nexport class CardComponent implements AfterViewInit{\n  @Input() direction: 'row' | 'column' = 'column';\n  @ViewChild(forwardRef(() => FlexDirective)) flexDirective?: FlexDirective;\n\n  ngAfterViewInit(): void {\n    if (this.flexDirective) {\n      this.flexDirective.direction = this.direction;\n    }\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "implements": [
+                "AfterViewInit"
+            ],
             "templateData": "<ng-content></ng-content>\n"
         },
         {
@@ -2269,7 +3641,7 @@
         },
         {
             "name": "GridComponent",
-            "id": "component-GridComponent-1166d1f253d1acb9b3c3e3253db06d35772fc176ecec2171266af6e14004c019fe4d0b924528ce88ab4c336c5f307f9bbe069c0fadda5b2fe3db929a9f86f28f",
+            "id": "component-GridComponent-bbe78734ae25e2ca0f680bbfec521474dbd9cd10b46d5eff3080ca45830ddccfd8b7ff48ff763a9344875387aef31353cd3f9d774aa06bc4a54965d033a92b41",
             "file": "src/app/components/grid/grid.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2298,7 +3670,7 @@
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 17,
                     "type": "string[]",
                     "decorators": []
                 }
@@ -2315,7 +3687,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\nimport {GridDirective} from '../../directives/structural/grid.directive';\n\n@Component({\n  selector: 'app-grid',\n  imports: [],\n  templateUrl: './grid.component.html',\n  hostDirectives: [\n    {\n      directive: GridDirective,\n      inputs: ['columns'], // expose 'columns' input from directive\n    }\n  ],\n})\nexport class GridComponent {\n  @Input() columns: string[] = [];\n}\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\nimport {GridDirective} from '../../directives/structural/grid.directive';\nimport {HoverGrowDirective} from '../../directives/animations/hover-grow.directive';\n\n@Component({\n  selector: 'app-grid',\n  imports: [],\n  templateUrl: './grid.component.html',\n  hostDirectives: [\n    {\n      directive: GridDirective,\n      inputs: ['columns'], // expose 'columns' input from directive\n    },\n  ],\n})\nexport class GridComponent {\n  @Input() columns: string[] = [];\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -2598,7 +3970,7 @@
         },
         {
             "name": "SectionComponent",
-            "id": "component-SectionComponent-ce3ccb2d3359ee87e2c25a90e57699ff587e09ea74a3202e01bcd79946c75f5238b1c1302125036399be2a05c3bbd0102b7eaee073259423d1e963d63a024310",
+            "id": "component-SectionComponent-7c5a05c457b516bfe54d331deb78500c02748c522897f1921ab544bc6a493b11a7569b6aed7ba862cc8548b07203bf37cb1302c16438c65ad2271103b8b2f09f",
             "file": "src/app/components/section/section.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2630,7 +4002,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport {SectionDirective} from '../../directives/structural/section.directive';\n\n@Component({\n  selector: 'app-section',\n  imports: [],\n  templateUrl: './section.component.html',\n  hostDirectives: [SectionDirective]\n})\nexport class SectionComponent {\n\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport {SectionDirective} from '../../directives/structural/section.directive';\n\n@Component({\n  selector: 'app-section',\n  imports: [],\n  templateUrl: './section.component.html',\n  hostDirectives: [SectionDirective]\n})\nexport class SectionComponent {}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -2658,8 +4030,8 @@
                 "file": "src/app/theme/design-tokens.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\n  colors: {\n    primary: '#6200ee',\n    secondary: '#03dac6',\n    background: '#ffffff',\n    text: '#000000',\n    border: '#cccccc',\n  },\n  spacing: {\n    xs: '4px',\n    sm: '8px',\n    md: '16px',\n    lg: '24px',\n    xl: '32px',\n  },\n  typography: {\n    fontFamily: \"'Roboto', sans-serif\",\n    fontSize: '16px',\n    fontWeight: '400',\n    lineHeight: '1.5',\n  },\n  borderRadius: {\n    sm: '4px',\n    md: '8px',\n    lg: '16px',\n  },\n}"
+                "type": "Theme",
+                "defaultValue": "{\n  colors: {\n    primary: '#6200ee',\n    secondary: '#03dac6',\n    background: '#ffffff',\n    text: '#000000',\n    border: '#cccccc',\n    error: '#e40707',\n    success: '#63e407'\n  },\n  spacing: {\n    xs: '4px',\n    sm: '8px',\n    md: '16px',\n    lg: '24px',\n    xl: '32px',\n  },\n  typography: {\n    fontFamily: \"'Roboto', sans-serif\",\n    fontSize: '14px',\n    fontWeight: '400',\n    lineHeight: '1.5',\n  },\n  borderRadius: {\n    sm: '4px',\n    md: '8px',\n    lg: '16px',\n  },\n}"
             }
         ],
         "functions": [],
@@ -2686,8 +4058,8 @@
                     "file": "src/app/theme/design-tokens.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\n  colors: {\n    primary: '#6200ee',\n    secondary: '#03dac6',\n    background: '#ffffff',\n    text: '#000000',\n    border: '#cccccc',\n  },\n  spacing: {\n    xs: '4px',\n    sm: '8px',\n    md: '16px',\n    lg: '24px',\n    xl: '32px',\n  },\n  typography: {\n    fontFamily: \"'Roboto', sans-serif\",\n    fontSize: '16px',\n    fontWeight: '400',\n    lineHeight: '1.5',\n  },\n  borderRadius: {\n    sm: '4px',\n    md: '8px',\n    lg: '16px',\n  },\n}"
+                    "type": "Theme",
+                    "defaultValue": "{\n  colors: {\n    primary: '#6200ee',\n    secondary: '#03dac6',\n    background: '#ffffff',\n    text: '#000000',\n    border: '#cccccc',\n    error: '#e40707',\n    success: '#63e407'\n  },\n  spacing: {\n    xs: '4px',\n    sm: '8px',\n    md: '16px',\n    lg: '24px',\n    xl: '32px',\n  },\n  typography: {\n    fontFamily: \"'Roboto', sans-serif\",\n    fontSize: '14px',\n    fontWeight: '400',\n    lineHeight: '1.5',\n  },\n  borderRadius: {\n    sm: '4px',\n    md: '8px',\n    lg: '16px',\n  },\n}"
                 }
             ]
         },
@@ -2697,7 +4069,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 4,
+        "count": 2,
         "status": "low",
         "files": [
             {
@@ -2720,12 +4092,30 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/components/button/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/components/canvas/canvas.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "CanvasComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/card/card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -2765,12 +4155,57 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/directives/animations/bounce-click.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "BounceClickDirective",
+                "coveragePercent": 0,
+                "coverageCount": "0/13",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/directives/animations/hover-grow.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "HoverGrowDirective",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/directives/animations/skeleton-loader.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "SkeletonLoaderDirective",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/directives/base.directive.ts",
                 "type": "directive",
                 "linktype": "directive",
                 "name": "BaseDirective",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/10",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/directives/functional/button.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "ButtonDirective",
+                "coveragePercent": 0,
+                "coverageCount": "0/12",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/directives/functional/card.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "CardDirective",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {
@@ -2779,7 +4214,7 @@
                 "linktype": "directive",
                 "name": "CanvasDirective",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {
@@ -2788,7 +4223,7 @@
                 "linktype": "directive",
                 "name": "FlexDirective",
                 "coveragePercent": 0,
-                "coverageCount": "0/9",
+                "coverageCount": "0/14",
                 "status": "low"
             },
             {
@@ -2797,7 +4232,7 @@
                 "linktype": "directive",
                 "name": "GridDirective",
                 "coveragePercent": 0,
-                "coverageCount": "0/8",
+                "coverageCount": "0/11",
                 "status": "low"
             },
             {
@@ -2806,7 +4241,7 @@
                 "linktype": "directive",
                 "name": "HeaderDirective",
                 "coveragePercent": 0,
-                "coverageCount": "0/8",
+                "coverageCount": "0/10",
                 "status": "low"
             },
             {
@@ -2815,7 +4250,25 @@
                 "linktype": "directive",
                 "name": "SectionDirective",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/theme/classes/style-builder-factory.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "StyleBuilderFactory",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/theme/classes/style-builder.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "StyleBuilder",
+                "coveragePercent": 0,
+                "coverageCount": "0/12",
                 "status": "low"
             },
             {
@@ -2826,6 +4279,24 @@
                 "name": "DesignTokens",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/theme/interfaces/can-be-styled.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "CanBeStyled",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/theme/interfaces/theme.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Theme",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -2843,7 +4314,7 @@
                 "linktype": "injectable",
                 "name": "ThemeService",
                 "coveragePercent": 0,
-                "coverageCount": "0/10",
+                "coverageCount": "0/11",
                 "status": "low"
             },
             {

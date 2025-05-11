@@ -13,6 +13,7 @@ export class ButtonDirective implements OnInit, OnDestroy {
 
   private subscription: Subscription | undefined;
   private fontSize: string = '14px'; // Default font size (fallback)
+  private fontFamily: string = 'Arial'; // Default font size (fallback)
 
   constructor(
     private el: ElementRef,
@@ -23,6 +24,7 @@ export class ButtonDirective implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscription = this.themeService.theme$.subscribe((theme) => {
       this.fontSize = theme.typography.fontSize || this.fontSize;  // Get font size from theme
+      this.fontSize = theme.typography.fontFamily || this.fontFamily;  // Get font size from theme
       this.applyStyles(theme);
     });
 
@@ -52,6 +54,7 @@ export class ButtonDirective implements OnInit, OnDestroy {
 
     // Apply size based on font size (calculated dynamically)
     this.renderer.setStyle(this.el.nativeElement, 'font-size', this.fontSize);
+    this.renderer.setStyle(this.el.nativeElement, 'font-family', this.fontFamily);
 
     // Apply padding based on theme
     const padding = theme.spacing?.md || '0.75rem 1.5rem';  // Use theme spacing

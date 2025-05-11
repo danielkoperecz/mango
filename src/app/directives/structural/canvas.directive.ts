@@ -1,22 +1,24 @@
 import {Directive} from '@angular/core';
 import {BaseDirective} from '../base.directive';
+import {Theme} from '../../theme/interfaces/theme.interface';
 
 @Directive({
   selector: '[appCanvas]'
 })
 export class CanvasDirective extends BaseDirective {
 
-  applyStyles(theme: any) {
+  applyStyles(theme: Theme) {
+    console.log(theme)
     this.styles
       .makeItFlex('column', false)
       .makeItFullWidth()
       .makeItOverflowXHidden()
       .makeItPadded()
 
-    this.renderer.setStyle(this.element, 'background', theme.background);
-    this.renderer.setStyle(this.element, 'color', theme.text);
-    this.renderer.setStyle(this.element, 'gap', theme.spacing.lg);
-    this.renderer.setStyle(this.element, 'alignItems', 'center');
+    this.styleSetter.setStyle(this.element, 'background', theme.colors.background);
+    this.styleSetter.setStyle(this.element, 'color', theme.colors.text);
+    this.styleSetter.setStyle(this.element, 'gap', theme.spacing.lg);
+    this.styleSetter.setStyle(this.element, 'alignItems', 'center');
   }
 
 }

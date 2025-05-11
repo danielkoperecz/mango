@@ -1,8 +1,6 @@
 // section.directive.ts
-import { Directive, ElementRef, Renderer2 } from '@angular/core';
-import { ThemeService } from '../../theme/services/theme.service';
+import { Directive } from '@angular/core';
 import {BaseDirective} from '../base.directive';
-import {StyleService} from '../../theme/services/style.service';
 import {Theme} from '../../theme/interfaces/theme.interface';
 
 @Directive({
@@ -13,14 +11,14 @@ export class SectionDirective extends BaseDirective {
   applyStyles(theme: Theme): void {
     const element = this.element;
 
-    this.renderer.setStyle(element, 'height', '100vh');
-    this.renderer.setStyle(element, 'overflow', 'hidden');
-    this.renderer.setStyle(element, 'padding', theme.spacing.md);
-    this.renderer.setStyle(element, 'background', 'pink');
-    this.renderer.setStyle(element, 'color', theme.colors.text);
-    this.renderer.setStyle(element, 'boxSizing', 'border-box');
-    this.renderer.setStyle(element, 'width', '100%');
-    this.renderer.setStyle(element, 'display', 'flex');
-    this.renderer.setStyle(element, 'flexDirection', 'column');
+    this.styleSetter.setStyle(element, 'height', '100vh');
+    this.styleSetter.setStyle(element, 'overflow', 'hidden');
+    this.styleSetter.setStyle(element, 'padding', theme.spacing.md);
+    this.styleSetter.setStyle(element, 'background', 'pink');
+    this.styleSetter.setStyle(element, 'color', theme.colors.text);
+    this.styleSetter.setStyle(element, 'boxSizing', 'border-box');
+    this.styleSetter.setStyle(element, 'width', '100%');
+    this.styleSetter.setStyle(element, 'display', 'flex');
+    this.styleSetter.setStyle(element, 'flexDirection', 'column');
   }
 }

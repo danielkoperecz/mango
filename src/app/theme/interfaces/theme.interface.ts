@@ -5,8 +5,8 @@ export interface Theme {
     background: string;
     text: string;
     border: string;
-    error?: string;
-    success?: string;
+    error: string;
+    success: string;
     [key: string]: string | undefined;
   };
   spacing: {

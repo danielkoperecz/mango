@@ -54,16 +54,16 @@ export class ThemeService {
 
   switchToDarkTheme() {
     const darkTheme = {
-      ...this.darkTheme,
       ...this.designTokens, // Merge design tokens into dark theme
+      ...this.darkTheme,
     } as Theme;
     this.themeSubject.next(darkTheme);
   }
 
   switchToLightTheme() {
     const lightTheme = {
-      ...this.lightTheme,
       ...this.designTokens, // Merge design tokens into light theme
+      ...this.lightTheme,
     } as Theme;
     this.themeSubject.next(lightTheme);
   }
